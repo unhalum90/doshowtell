@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentence Stems for Voice Responses: Say What You Know</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 24px;
+            background: #f8fafc;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 24px;
+            padding-bottom: 24px;
+            border-bottom: 3px solid #0f172a;
+        }
+
+        .logo {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-size: 1.875rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 8px;
+        }
+
+        .tagline {
+            font-size: 1rem;
+            color: #475569;
+        }
+
+        .intro {
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            border: 2px solid #0ea5e9;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 28px;
+            text-align: center;
+        }
+
+        .intro p {
+            font-size: 1rem;
+            color: #0369a1;
+        }
+
+        /* Stem Categories */
+        .stems-grid {
+            display: grid;
+            gap: 16px;
+            margin-bottom: 28px;
+        }
+
+        .stem-category {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid;
+        }
+
+        .stem-category h2 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .stem-category h2 .icon {
+            font-size: 1.25rem;
+        }
+
+        .stems-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .stem {
+            background: #f1f5f9;
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #334155;
+            border: 1px solid #e2e8f0;
+        }
+
+        /* Category Colors */
+        .category-what {
+            border-left-color: #f59e0b;
+        }
+
+        .category-what h2 {
+            color: #b45309;
+        }
+
+        .category-what .stem {
+            background: #fef3c7;
+            border-color: #fcd34d;
+            color: #92400e;
+        }
+
+        .category-why {
+            border-left-color: #3b82f6;
+        }
+
+        .category-why h2 {
+            color: #1d4ed8;
+        }
+
+        .category-why .stem {
+            background: #dbeafe;
+            border-color: #93c5fd;
+            color: #1e40af;
+        }
+
+        .category-specific {
+            border-left-color: #8b5cf6;
+        }
+
+        .category-specific h2 {
+            color: #6d28d9;
+        }
+
+        .category-specific .stem {
+            background: #ede9fe;
+            border-color: #c4b5fd;
+            color: #5b21b6;
+        }
+
+        .category-connect {
+            border-left-color: #10b981;
+        }
+
+        .category-connect h2 {
+            color: #047857;
+        }
+
+        .category-connect .stem {
+            background: #d1fae5;
+            border-color: #6ee7b7;
+            color: #065f46;
+        }
+
+        .category-challenges {
+            border-left-color: #ef4444;
+        }
+
+        .category-challenges h2 {
+            color: #dc2626;
+        }
+
+        .category-challenges .stem {
+            background: #fee2e2;
+            border-color: #fca5a5;
+            color: #991b1b;
+        }
+
+        .category-learned {
+            border-left-color: #06b6d4;
+        }
+
+        .category-learned h2 {
+            color: #0891b2;
+        }
+
+        .category-learned .stem {
+            background: #cffafe;
+            border-color: #67e8f9;
+            color: #155e75;
+        }
+
+        /* CTA */
+        .cta {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: white;
+            padding: 24px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .cta h3 {
+            font-size: 1.125rem;
+            margin-bottom: 8px;
+        }
+
+        .cta p {
+            font-size: 0.9rem;
+            color: #94a3b8;
+            margin-bottom: 16px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: transform 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .cta-button-primary {
+            background: #3b82f6;
+            color: white;
+        }
+
+        .cta-button-secondary {
+            background: white;
+            color: #0f172a;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .footer p {
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        .cc-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: #94a3b8;
+        }
+
+        @media print {
+            body {
+                padding: 0;
+                margin: 0.5in;
+                max-width: 100%;
+                background: white;
+            }
+
+            .stem-category {
+                break-inside: avoid;
+            }
+
+            .cta-button {
+                border: 1px solid #333;
+            }
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .stems-list {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="logo">DO Show and Tell</div>
+        <h1>Sentence Stems for Voice Responses</h1>
+        <p class="tagline">Say What You Know</p>
+    </header>
+
+    <div class="intro">
+        <p>When answering questions about your work, these sentence starters can help you explain your thinking clearly.
+            <strong>Pick the ones that fit the question!</strong></p>
+    </div>
+
+    <div class="stems-grid">
+        <div class="stem-category category-what">
+            <h2><span class="icon">📝</span> When Asked "What did you do?"</h2>
+            <div class="stems-list">
+                <span class="stem">"First, I..."</span>
+                <span class="stem">"I started by..."</span>
+                <span class="stem">"My approach was to..."</span>
+            </div>
+        </div>
+
+        <div class="stem-category category-why">
+            <h2><span class="icon">🤔</span> When Asked "Why did you do it that way?"</h2>
+            <div class="stems-list">
+                <span class="stem">"I chose to _____ because..."</span>
+                <span class="stem">"I thought this would work because..."</span>
+                <span class="stem">"I remembered that _____, so I..."</span>
+                <span class="stem">"This made sense to me because..."</span>
+            </div>
+        </div>
+
+        <div class="stem-category category-specific">
+            <h2><span class="icon">🔍</span> When Asked About a Specific Part of Your Work</h2>
+            <div class="stems-list">
+                <span class="stem">"That part shows..."</span>
+                <span class="stem">"I did that because..."</span>
+                <span class="stem">"I was thinking about..."</span>
+            </div>
+        </div>
+
+        <div class="stem-category category-connect">
+            <h2><span class="icon">🔗</span> When Asked to Connect to What You've Learned</h2>
+            <div class="stems-list">
+                <span class="stem">"This reminds me of..."</span>
+                <span class="stem">"I used what I learned about _____ to..."</span>
+                <span class="stem">"This is similar to _____ because..."</span>
+            </div>
+        </div>
+
+        <div class="stem-category category-challenges">
+            <h2><span class="icon">⚡</span> When Asked About Challenges or Changes</h2>
+            <div class="stems-list">
+                <span class="stem">"The tricky part was..."</span>
+                <span class="stem">"I got stuck when _____, so I..."</span>
+                <span class="stem">"I changed my approach because..."</span>
+                <span class="stem">"If I did this again, I would..."</span>
+            </div>
+        </div>
+
+        <div class="stem-category category-learned">
+            <h2><span class="icon">💡</span> When Asked What You Learned</h2>
+            <div class="stems-list">
+                <span class="stem">"Now I understand that..."</span>
+                <span class="stem">"The most important thing is..."</span>
+                <span class="stem">"This taught me..."</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="cta">
+        <h3>Want more scaffolds like this?</h3>
+        <p>SayVeritas asks personalized questions based on each student's actual work—and provides AI-powered feedback
+            on their verbal responses.</p>
+        <div class="cta-buttons">
+            <a href="https://www.sayveritas.com" class="cta-button cta-button-primary">👉 Explore SayVeritas</a>
+            <a href="https://www.sayveritas.com/#webinars" class="cta-button cta-button-secondary">🎓 Join a Free
+                Webinar</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>DO Show and Tell | doshowandtell.com</p>
+        <div class="cc-badge">
+            <span>🅭🅯🄍</span>
+            <span>Creative Commons BY-NC</span>
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -124,6 +124,14 @@ export default function ResourcesPage() {
                                             <a href="/resources/How-to-DO-Show-and-Tell-Handout.html" target="_blank" className="btn btn-primary w-full text-center">
                                                 Download
                                             </a>
+                                        ) : resource.title === "Sentence Stems for Voice Recording" ? (
+                                            <a href="/resources/Sentence-Stems-for-Voice-Recording.html" target="_blank" className="btn btn-primary w-full text-center">
+                                                Download
+                                            </a>
+                                        ) : resource.title === "Self-Reflection Checklist" ? (
+                                            <a href="/resources/Self-Reflection-Checklist.html" target="_blank" className="btn btn-primary w-full text-center">
+                                                Download
+                                            </a>
                                         ) : (
                                             <button className="btn btn-secondary btn-sm w-full opacity-70 cursor-not-allowed bg-slate-200 text-slate-500 border-none pointer-events-none font-medium" disabled>
                                                 Coming Soon

@@ -49,6 +49,11 @@ export default function GettingStartedPage() {
                             <div className="week-tip">
                                 <strong>💡 Tip:</strong> Keep it NO-stake this week. No grades, no rubric. Just practice getting comfortable with voice recording.
                             </div>
+                            <div className="mt-6 pt-4 border-t border-slate-200">
+                                <Link href="https://www.sayveritas.com/#how" target="_blank" className="text-blue-600 font-semibold hover:text-blue-800 flex items-center gap-2">
+                                    See how this would work in the SayVeritas platform →
+                                </Link>
+                            </div>
                         </div>
                     </section>
 
@@ -80,6 +85,11 @@ export default function GettingStartedPage() {
 
                             <div className="week-tip">
                                 <strong>💡 Tip:</strong> Listen to a few recordings this week and share (with permission) what made them strong. Students learn from examples.
+                            </div>
+                            <div className="mt-6 pt-4 border-t border-slate-200">
+                                <Link href="https://www.sayveritas.com/#how" target="_blank" className="text-blue-600 font-semibold hover:text-blue-800 flex items-center gap-2">
+                                    See how this would work in the SayVeritas platform →
+                                </Link>
                             </div>
                         </div>
                     </section>
@@ -113,6 +123,11 @@ export default function GettingStartedPage() {
                             <div className="week-tip">
                                 <strong>💡 Tip:</strong> Start identifying class patterns. Take notes: "3 students confused about X," "Most students missed Y."
                             </div>
+                            <div className="mt-6 pt-4 border-t border-slate-200">
+                                <Link href="https://www.sayveritas.com/#how" target="_blank" className="text-blue-600 font-semibold hover:text-blue-800 flex items-center gap-2">
+                                    See how this would work in the SayVeritas platform →
+                                </Link>
+                            </div>
                         </div>
                     </section>
 
@@ -135,6 +150,11 @@ export default function GettingStartedPage() {
 
                             <div className="week-tip">
                                 <strong>💡 Tip:</strong> Mix high-stakes and low-stakes. Not every assignment needs a grade. The goal is consistent practice, not constant assessment.
+                            </div>
+                            <div className="mt-6 pt-4 border-t border-slate-200">
+                                <Link href="https://www.sayveritas.com/#how" target="_blank" className="text-blue-600 font-semibold hover:text-blue-800 flex items-center gap-2">
+                                    See how this would work in the SayVeritas platform →
+                                </Link>
                             </div>
                         </div>
                     </section>

@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self-Reflection Checklist: Before Your Interview</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 24px;
+            background: #f8fafc;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 24px;
+            padding-bottom: 24px;
+            border-bottom: 3px solid #0f172a;
+        }
+
+        .logo {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-size: 1.875rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 8px;
+        }
+
+        .tagline {
+            font-size: 1rem;
+            color: #475569;
+        }
+
+        .intro {
+            background: linear-gradient(135deg, #fdf4ff, #fae8ff);
+            border: 2px solid #d946ef;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 28px;
+            text-align: center;
+        }
+
+        .intro p {
+            font-size: 1rem;
+            color: #86198f;
+        }
+
+        /* Section Styles */
+        section {
+            margin-bottom: 24px;
+        }
+
+        section h2 {
+            font-size: 1.125rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        section h2 .icon {
+            font-size: 1.25rem;
+        }
+
+        /* Rating Table */
+        .rating-section {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .rating-section h2 {
+            color: #7c3aed;
+        }
+
+        .rating-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .rating-table th {
+            text-align: center;
+            padding: 12px 8px;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .rating-table th:first-child {
+            text-align: left;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #64748b;
+            letter-spacing: 0.5px;
+        }
+
+        .rating-table td {
+            padding: 14px 8px;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .rating-table td:first-child {
+            font-weight: 500;
+        }
+
+        .rating-table td:not(:first-child) {
+            text-align: center;
+        }
+
+        .rating-circle {
+            width: 28px;
+            height: 28px;
+            border: 2px solid #cbd5e1;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .rating-table tr:hover {
+            background: #f8fafc;
+        }
+
+        /* Setup Checklist */
+        .setup-section {
+            background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+            border: 2px solid #10b981;
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        .setup-section h2 {
+            color: #047857;
+        }
+
+        .setup-list {
+            list-style: none;
+        }
+
+        .setup-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        .setup-item:last-child {
+            border-bottom: none;
+        }
+
+        .checkbox {
+            width: 22px;
+            height: 22px;
+            border: 2px solid #10b981;
+            border-radius: 4px;
+            flex-shrink: 0;
+            background: white;
+        }
+
+        /* Warm-Up Reflection */
+        .warmup-section {
+            background: linear-gradient(135deg, #fff7ed, #ffedd5);
+            border: 2px solid #f97316;
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        .warmup-section h2 {
+            color: #c2410c;
+        }
+
+        .warmup-intro {
+            font-size: 0.95rem;
+            color: #9a3412;
+            margin-bottom: 16px;
+            font-style: italic;
+        }
+
+        .warmup-questions {
+            list-style: none;
+        }
+
+        .warmup-question {
+            background: white;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 12px;
+            border-left: 4px solid #f97316;
+        }
+
+        .warmup-question:last-child {
+            margin-bottom: 0;
+        }
+
+        .warmup-question p {
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 8px;
+        }
+
+        .warmup-question .answer-line {
+            height: 2px;
+            background: repeating-linear-gradient(to right,
+                    #cbd5e1,
+                    #cbd5e1 4px,
+                    transparent 4px,
+                    transparent 8px);
+            margin-top: 24px;
+        }
+
+        /* CTA */
+        .cta {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: white;
+            padding: 24px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .cta h3 {
+            font-size: 1.125rem;
+            margin-bottom: 8px;
+        }
+
+        .cta p {
+            font-size: 0.9rem;
+            color: #94a3b8;
+            margin-bottom: 16px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: transform 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .cta-button-primary {
+            background: #3b82f6;
+            color: white;
+        }
+
+        .cta-button-secondary {
+            background: white;
+            color: #0f172a;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .footer p {
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        .cc-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: #94a3b8;
+        }
+
+        @media print {
+            body {
+                padding: 0;
+                margin: 0.5in;
+                max-width: 100%;
+                background: white;
+            }
+
+            section {
+                break-inside: avoid;
+            }
+
+            .cta-button {
+                border: 1px solid #333;
+            }
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .rating-table th,
+            .rating-table td {
+                padding: 10px 4px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="logo">DO Show and Tell</div>
+        <h1>Self-Reflection Checklist</h1>
+        <p class="tagline">Before Your Interview</p>
+    </header>
+
+    <div class="intro">
+        <p>Before you upload your work and start answering questions, take a moment to reflect. <strong>This helps you
+                prepare for the conversation and do your best thinking.</strong></p>
+    </div>
+
+    <section class="rating-section">
+        <h2><span class="icon">📊</span> Check Your Work</h2>
+        <table class="rating-table">
+            <thead>
+                <tr>
+                    <th>Before I Upload...</th>
+                    <th>😟</th>
+                    <th>😐</th>
+                    <th>😊</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>My work is complete</td>
+                    <td><span class="rating-circle"></span></td>
+                    <td><span class="rating-circle"></span></td>
+                    <td><span class="rating-circle"></span></td>
+                </tr>
+                <tr>
+                    <td>I can explain what I did</td>
+                    <td><span class="rating-circle"></span></td>
+                    <td><span class="rating-circle"></span></td>
+                    <td><span class="rating-circle"></span></td>
+                </tr>
+                <tr>
+                    <td>I can explain WHY I made my choices</td>
+                    <td><span class="rating-circle"></span></td>
+                    <td><span class="rating-circle"></span></td>
+                    <td><span class="rating-circle"></span></td>
+                </tr>
+                <tr>
+                    <td>I understand the main concept</td>
+                    <td><span class="rating-circle"></span></td>
+                    <td><span class="rating-circle"></span></td>
+                    <td><span class="rating-circle"></span></td>
+                </tr>
+                <tr>
+                    <td>I know where I struggled (and that's okay!)</td>
+                    <td><span class="rating-circle"></span></td>
+                    <td><span class="rating-circle"></span></td>
+                    <td><span class="rating-circle"></span></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section class="setup-section">
+        <h2><span class="icon">⚙️</span> Check Your Setup</h2>
+        <ul class="setup-list">
+            <li class="setup-item">
+                <span class="checkbox"></span>
+                <span>I have a clear photo/file of my work ready</span>
+            </li>
+            <li class="setup-item">
+                <span class="checkbox"></span>
+                <span>I'm in a quiet place where I can talk</span>
+            </li>
+            <li class="setup-item">
+                <span class="checkbox"></span>
+                <span>My device's microphone is working</span>
+            </li>
+            <li class="setup-item">
+                <span class="checkbox"></span>
+                <span>I'm ready to have a conversation about my thinking</span>
+            </li>
+        </ul>
+    </section>
+
+    <section class="warmup-section">
+        <h2><span class="icon">🧠</span> Warm-Up Reflection</h2>
+        <p class="warmup-intro">Think about these before you start:</p>
+        <ul class="warmup-questions">
+            <li class="warmup-question">
+                <p>What's the most important thing you want to explain?</p>
+                <div class="answer-line"></div>
+            </li>
+            <li class="warmup-question">
+                <p>Was there a part that was tricky? How did you work through it?</p>
+                <div class="answer-line"></div>
+            </li>
+            <li class="warmup-question">
+                <p>What would you tell a classmate about this problem?</p>
+                <div class="answer-line"></div>
+            </li>
+        </ul>
+    </section>
+
+    <div class="cta">
+        <h3>Give students the tools to own their learning.</h3>
+        <p>SayVeritas conducts personalized oral interviews that meet students where they are—building metacognition
+            alongside mastery.</p>
+        <div class="cta-buttons">
+            <a href="https://www.sayveritas.com" class="cta-button cta-button-primary">👉 See It In Action</a>
+            <a href="https://www.sayveritas.com/#webinars" class="cta-button cta-button-secondary">🎓 Join a Free
+                Webinar</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>DO Show and Tell | doshowandtell.com</p>
+        <div class="cc-badge">
+            <span>🅭🅯🄍</span>
+            <span>Creative Commons BY-NC</span>
+        </div>
+    </footer>
+
+</body>
+
+</html>

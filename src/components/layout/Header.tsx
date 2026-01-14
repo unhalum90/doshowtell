@@ -43,6 +43,14 @@ export function Header() {
           >
             See the Platform →
           </Link>
+          <Link
+            href="https://sayveritas.com/#webinars"
+            className="btn btn-secondary btn-sm ml-2"
+            target="_blank"
+            rel="noopener"
+          >
+            Webinars
+          </Link>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -88,6 +96,17 @@ export function Header() {
               onClick={() => setMobileMenuOpen(false)}
             >
               See the Platform →
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="https://sayveritas.com/#webinars"
+              className="btn btn-secondary"
+              target="_blank"
+              rel="noopener"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Weekly Webinars
             </Link>
           </li>
         </ul>

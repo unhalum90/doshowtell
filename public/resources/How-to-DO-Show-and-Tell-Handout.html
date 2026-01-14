@@ -4,110 +4,368 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Handout: How to DO Show and Tell</title>
+    <title>How to DO Show and Tell: A Student Guide</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: #1e293b;
             max-width: 800px;
             margin: 0 auto;
-            padding: 40px;
+            padding: 40px 24px;
+            background: #f8fafc;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 32px;
+            padding-bottom: 24px;
+            border-bottom: 3px solid #0f172a;
+        }
+
+        .logo {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
         }
 
         h1 {
-            color: #111;
-            font-size: 2.5em;
-            margin-bottom: 0.5em;
-            border-bottom: 3px solid #000;
-            padding-bottom: 10px;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 8px;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            color: #475569;
         }
 
         .intro {
-            font-size: 1.2em;
-            margin-bottom: 30px;
+            font-size: 1.1rem;
+            text-align: center;
+            margin-bottom: 32px;
+            color: #334155;
+        }
+
+        /* Steps */
+        .steps-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 32px;
         }
 
         .step {
-            margin-bottom: 40px;
-            padding: 20px;
-            background: #f9f9f9;
-            border-left: 5px solid #000;
+            padding: 24px;
+            border-radius: 12px;
+            border-left: 6px solid;
         }
 
-        .step h2 {
-            margin-top: 0;
-            font-size: 1.8em;
+        .step-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .step-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .step-number {
+            font-size: 1.5rem;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        .step-1 h2 {
-            color: #d97706;
-            border-left-color: #d97706;
+        .step p {
+            font-size: 1rem;
+            margin-bottom: 12px;
         }
 
-        .step-2 h2 {
-            color: #2563eb;
-            border-left-color: #2563eb;
-        }
-
-        .step-3 h2 {
-            color: #059669;
-            border-left-color: #059669;
-        }
-
-        .step-1 {
-            border-left-color: #d97706;
-            background: #fffbeb;
-        }
-
-        .step-2 {
-            border-left-color: #2563eb;
-            background: #eff6ff;
-        }
-
-        .step-3 {
-            border-left-color: #059669;
-            background: #ecfdf5;
-        }
-
-        ul {
-            list-style-type: none;
+        .step ul {
+            list-style: none;
             padding-left: 0;
         }
 
-        li {
-            margin-bottom: 10px;
-            padding-left: 20px;
+        .step li {
+            padding: 6px 0 6px 24px;
             position: relative;
         }
 
-        li:before {
-            content: "•";
+        .step li:before {
+            content: "→";
             position: absolute;
             left: 0;
             font-weight: bold;
         }
 
-        .footer {
-            margin-top: 50px;
-            padding-top: 20px;
-            border-top: 1px solid #ddd;
-            font-size: 0.9em;
-            color: #777;
+        /* Step 1 - DO (Orange/Amber) */
+        .step-do {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            border-color: #d97706;
+        }
+
+        .step-do .step-icon {
+            background: #d97706;
+            color: white;
+        }
+
+        .step-do .step-number {
+            color: #b45309;
+        }
+
+        /* Step 2 - SHOW (Blue) */
+        .step-show {
+            background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+            border-color: #2563eb;
+        }
+
+        .step-show .step-icon {
+            background: #2563eb;
+            color: white;
+        }
+
+        .step-show .step-number {
+            color: #1d4ed8;
+        }
+
+        /* Step 3 - TELL (Green) */
+        .step-tell {
+            background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+            border-color: #059669;
+        }
+
+        .step-tell .step-icon {
+            background: #059669;
+            color: white;
+        }
+
+        .step-tell .step-number {
+            color: #047857;
+        }
+
+        /* Pro Tips */
+        .pro-tips {
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            border: 2px solid #0ea5e9;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+
+        .pro-tips h2 {
+            font-size: 1.25rem;
+            color: #0369a1;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pro-tips ul {
+            list-style: none;
+        }
+
+        .pro-tips li {
+            padding: 8px 0 8px 28px;
+            position: relative;
+        }
+
+        .pro-tips li:before {
+            content: "💡";
+            position: absolute;
+            left: 0;
+        }
+
+        /* Checklist */
+        .checklist {
+            background: white;
+            border: 2px dashed #94a3b8;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+
+        .checklist h2 {
+            font-size: 1.25rem;
+            color: #334155;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .checklist-item:last-child {
+            border-bottom: none;
+        }
+
+        .checkbox {
+            width: 24px;
+            height: 24px;
+            border: 2px solid #94a3b8;
+            border-radius: 4px;
+            flex-shrink: 0;
+        }
+
+        /* Student Info */
+        .student-info {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .student-info-field {
+            flex: 1;
+            padding: 12px;
+            border: 2px solid #cbd5e1;
+            border-radius: 8px;
+            background: white;
+        }
+
+        .student-info-field label {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #64748b;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .student-info-field .field-line {
+            height: 24px;
+            border-bottom: 1px solid #cbd5e1;
+        }
+
+        /* CTA */
+        .cta {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: white;
+            padding: 24px;
+            border-radius: 12px;
             text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .cta h3 {
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+        }
+
+        .cta p {
+            font-size: 0.95rem;
+            color: #94a3b8;
+            margin-bottom: 16px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: transform 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .cta-button-primary {
+            background: #3b82f6;
+            color: white;
+        }
+
+        .cta-button-secondary {
+            background: white;
+            color: #0f172a;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .footer p {
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        .cc-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: #94a3b8;
         }
 
         @media print {
             body {
                 padding: 0;
-                margin: 1cm;
+                margin: 0.5in;
                 max-width: 100%;
+                background: white;
             }
 
-            .step {
+            .step,
+            .pro-tips,
+            .checklist,
+            .cta {
                 break-inside: avoid;
+            }
+
+            .cta-button {
+                border: 1px solid #333;
+            }
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .student-info {
+                flex-direction: column;
             }
         }
     </style>
@@ -115,47 +373,110 @@
 
 <body>
 
-    <h1>How to DO Show and Tell</h1>
+    <header class="header">
+        <div class="logo">DO Show and Tell</div>
+        <h1>How to DO Show and Tell</h1>
+        <p class="tagline">A Student Guide</p>
+    </header>
+
     <p class="intro">
-        Use this guide to help you explain your thinking clearly. Remember: the goal isn't just to get the right answer,
-        but to share <em>how</em> you got there.
+        This guide shows you how to share your thinking. Remember: the goal isn't just the right answer—it's showing
+        <em>how</em> you got there!
     </p>
 
-    <div class="step step-1">
-        <h2>1. DO</h2>
-        <p><strong>Do the work first.</strong> Before you record your voice, make sure you have it in front of you.</p>
+    <div class="steps-container">
+        <div class="step step-do">
+            <div class="step-header">
+                <div class="step-icon">✏️</div>
+                <span class="step-number">1. DO</span>
+            </div>
+            <p><strong>Complete your work first.</strong> Solve the problem, finish the project, or answer the question.
+                Do your best thinking!</p>
+            <ul>
+                <li>Annotate texts and highlight key evidence</li>
+                <li>Solve problems step-by-step on paper</li>
+                <li>Draw diagrams, maps, or sketches</li>
+                <li>Write out your thinking process</li>
+            </ul>
+        </div>
+
+        <div class="step step-show">
+            <div class="step-header">
+                <div class="step-icon">📷</div>
+                <span class="step-number">2. SHOW</span>
+            </div>
+            <p><strong>Upload your work.</strong> Take a clear photo or upload your file so the system can see what you
+                created.</p>
+            <ul>
+                <li>Take a clear photo of handwritten work, drawings, or notes</li>
+                <li>Or upload your digital file (document, slide, etc.)</li>
+                <li>The system will look at your work and prepare questions just for you</li>
+            </ul>
+        </div>
+
+        <div class="step step-tell">
+            <div class="step-header">
+                <div class="step-icon">🎤</div>
+                <span class="step-number">3. TELL</span>
+            </div>
+            <p><strong>Answer questions about your work.</strong> Speak your answers out loud—like a conversation with a
+                teacher.</p>
+            <ul>
+                <li>You'll hear questions through your device</li>
+                <li>The questions are based on YOUR work, so there's no "right" answer to memorize</li>
+                <li>Just explain your thinking!</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="pro-tips">
+        <h2>💡 Pro Tips</h2>
         <ul>
-            <li>Annotate the text or image.</li>
-            <li>Solve the math problem on paper.</li>
-            <li>Draw a diagram or map.</li>
-            <li>Highlight key evidence.</li>
+            <li>Find a quiet spot where you can speak freely</li>
+            <li>It's okay to pause and think before answering</li>
+            <li>There are no trick questions—just explain what you did and why</li>
+            <li>Mistakes are part of learning—talk about those too!</li>
         </ul>
     </div>
 
-    <div class="step step-2">
-        <h2>2. SHOW</h2>
-        <p><strong>Look at your work while you talk.</strong> Use your visuals to guide your explanation.</p>
-        <ul>
-            <li>Look specific words or numbers as you mention them.</li>
-            <li>Trace the path or logic on your diagram with your finger.</li>
-            <li>Use your notes to keep your explanation focused.</li>
-        </ul>
+    <div class="checklist">
+        <h2>✅ Before You Start Checklist</h2>
+        <div class="checklist-item">
+            <div class="checkbox"></div>
+            <span>My work is complete</span>
+        </div>
+        <div class="checklist-item">
+            <div class="checkbox"></div>
+            <span>I have a clear photo or file ready</span>
+        </div>
+        <div class="checklist-item">
+            <div class="checkbox"></div>
+            <span>I'm in a quiet place</span>
+        </div>
+        <div class="checklist-item">
+            <div class="checkbox"></div>
+            <span>I'm ready to talk about my thinking</span>
+        </div>
     </div>
 
-    <div class="step step-3">
-        <h2>3. TELL</h2>
-        <p><strong>Explain your thinking.</strong> Connect the dots for your audience.</p>
-        <ul>
-            <li>"I started by..."</li>
-            <li>"I noticed that..."</li>
-            <li>"This part was tricky because..."</li>
-            <li>"I know this is true because..."</li>
-        </ul>
+
+    <div class="cta">
+        <h3>Ready to bring DO Show and Tell to your classroom?</h3>
+        <p>SayVeritas powers the SHOW and TELL—analyzing student work and conducting personalized oral interviews.</p>
+        <div class="cta-buttons">
+            <a href="https://www.sayveritas.com" class="cta-button cta-button-primary">👉 Visit SayVeritas.com</a>
+            <a href="https://www.sayveritas.com/#webinars" class="cta-button cta-button-secondary">🎓 Join a Free
+                Webinar</a>
+        </div>
     </div>
 
-    <div class="footer">
-        <p>DO Show and Tell | Creative Commons BY-NC | Download at doshowandtell.com</p>
-    </div>
+    <footer class="footer">
+        <p>DO Show and Tell | doshowandtell.com</p>
+        <div class="cc-badge">
+            <span>🅭🅯🄍</span>
+            <span>Creative Commons BY-NC</span>
+        </div>
+    </footer>
 
 </body>
 

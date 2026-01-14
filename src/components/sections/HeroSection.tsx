@@ -29,6 +29,14 @@ export function HeroSection() {
             >
               See the Platform
             </Link>
+            <Link
+              href="https://sayveritas.com/#webinars"
+              className="btn btn-secondary"
+              target="_blank"
+              rel="noopener"
+            >
+              Weekly Webinars
+            </Link>
           </div>
         </div>
 

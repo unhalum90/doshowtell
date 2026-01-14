@@ -17,6 +17,7 @@ const getStartedLinks = [
 
 const aboutLinks = [
   { href: "/about", label: "About" },
+  { href: "https://sayveritas.com/#webinars", label: "Weekly Webinars", external: true },
   { href: "https://sayveritas.com", label: "SayVeritas Platform", external: true },
 ];
 
