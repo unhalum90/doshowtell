@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment Prompt Templates | DO Show and Tell</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 24px;
+            background: #f8fafc;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 32px;
+            padding-bottom: 24px;
+            border-bottom: 3px solid #0f172a;
+        }
+
+        .logo {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #dbeafe;
+            color: #1e40af;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 8px;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            color: #475569;
+        }
+
+        .intro {
+            font-size: 1rem;
+            margin-bottom: 32px;
+            padding: 20px;
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            border-radius: 12px;
+            border-left: 4px solid #0ea5e9;
+        }
+
+        .subject-section {
+            margin-bottom: 40px;
+        }
+
+        .subject-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding: 16px 20px;
+            border-radius: 12px;
+        }
+
+        .subject-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .subject-header h2 {
+            font-size: 1.25rem;
+            color: white;
+        }
+
+        .ela .subject-header {
+            background: linear-gradient(135deg, #7c3aed, #6d28d9);
+        }
+
+        .ela .subject-icon {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .math .subject-header {
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+        }
+
+        .math .subject-icon {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .science .subject-header {
+            background: linear-gradient(135deg, #059669, #047857);
+        }
+
+        .science .subject-icon {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .social .subject-header {
+            background: linear-gradient(135deg, #ea580c, #c2410c);
+        }
+
+        .social .subject-icon {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .prompt-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            margin-bottom: 16px;
+            overflow: hidden;
+        }
+
+        .prompt-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .prompt-title {
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .prompt-meta {
+            display: flex;
+            gap: 8px;
+        }
+
+        .meta-badge {
+            font-size: 0.7rem;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .grade-badge {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .blooms-badge {
+            background: #fef3c7;
+            color: #b45309;
+        }
+
+        .prompt-body {
+            padding: 20px;
+        }
+
+        .prompt-row {
+            margin-bottom: 16px;
+        }
+
+        .prompt-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .prompt-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #64748b;
+            margin-bottom: 6px;
+        }
+
+        .artifact-box {
+            background: #f1f5f9;
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        .oral-prompt {
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            padding: 16px;
+            border-radius: 8px;
+            border-left: 4px solid #0ea5e9;
+            font-style: italic;
+            font-size: 0.95rem;
+        }
+
+        .followups {
+            list-style: none;
+        }
+
+        .followups li {
+            padding: 8px 0 8px 24px;
+            position: relative;
+            font-size: 0.9rem;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .followups li:last-child {
+            border-bottom: none;
+        }
+
+        .followups li:before {
+            content: "→";
+            position: absolute;
+            left: 8px;
+            color: #64748b;
+        }
+
+        .template-section {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .template-section h3 {
+            font-size: 1.1rem;
+            color: #0f172a;
+            margin-bottom: 16px;
+        }
+
+        .template-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .template-table th {
+            text-align: left;
+            background: #f8fafc;
+            padding: 12px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .template-table td {
+            padding: 12px;
+            border-bottom: 1px solid #e2e8f0;
+            vertical-align: top;
+        }
+
+        .template-table td:first-child {
+            font-weight: 500;
+            width: 35%;
+        }
+
+        .template-input {
+            width: 100%;
+            border: 1px dashed #cbd5e1;
+            border-radius: 4px;
+            min-height: 24px;
+            background: #fafafa;
+        }
+
+        .tips-section {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            border: 2px solid #d97706;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .tips-section h3 {
+            color: #b45309;
+            margin-bottom: 16px;
+            font-size: 1.1rem;
+        }
+
+        .tips-section ol {
+            padding-left: 20px;
+        }
+
+        .tips-section li {
+            padding: 6px 0;
+            color: #78350f;
+            font-size: 0.9rem;
+        }
+
+        .cta {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: white;
+            padding: 24px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .cta h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .cta p {
+            font-size: 0.9rem;
+            color: #94a3b8;
+            margin-bottom: 16px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .cta-button-primary {
+            background: #3b82f6;
+            color: white;
+        }
+
+        .cta-button-secondary {
+            background: white;
+            color: #0f172a;
+        }
+
+        .footer {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .footer p {
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        .cc-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: #94a3b8;
+        }
+
+        @media print {
+            body {
+                padding: 0;
+                margin: 0.5in;
+                max-width: 100%;
+                background: white;
+            }
+
+            .prompt-card {
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">DO Show and Tell</div>
+        <span class="badge">Teacher Resource</span>
+        <h1>DO Show and Tell Prompt Templates</h1>
+        <p class="tagline">Ready-to-Use by Subject</p>
+    </header>
+
+    <div class="intro">
+        <strong>For teachers:</strong> These templates give you ready-to-use oral assessment prompts organized by
+        subject and Bloom's level. Customize them for your specific content. Each prompt includes the artifact students
+        should upload and sample follow-up questions.
+    </div>
+
+    <!-- ELA Section -->
+    <div class="subject-section ela">
+        <div class="subject-header">
+            <div class="subject-icon">📚</div>
+            <h2>English Language Arts (ELA)</h2>
+        </div>
+
+        <div class="prompt-card">
+            <div class="prompt-header">
+                <span class="prompt-title">Reading Response</span>
+                <div class="prompt-meta">
+                    <span class="meta-badge grade-badge">Grades 3-5</span>
+                    <span class="meta-badge blooms-badge">Levels 2-3</span>
+                </div>
+            </div>
+            <div class="prompt-body">
+                <div class="prompt-row">
+                    <div class="prompt-label">Artifact Required</div>
+                    <div class="artifact-box">Written or drawn response to a reading passage</div>
+                </div>
+                <div class="prompt-row">
+                    <div class="prompt-label">Oral Prompt</div>
+                    <div class="oral-prompt">"Explain the main idea of the story you read. What's the most important
+                        thing the author wanted you to understand?"</div>
+                </div>
+                <div class="prompt-row">
+                    <div class="prompt-label">Follow-up Questions</div>
+                    <ul class="followups">
+                        <li>"What details from the text support this main idea?"</li>
+                        <li>"Why do you think the author wrote this story?"</li>
+                        <li>"How would the story be different if _____ had happened instead?"</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="prompt-card">
+            <div class="prompt-header">
+                <span class="prompt-title">Character Analysis</span>
+                <div class="prompt-meta">
+                    <span class="meta-badge grade-badge">Grades 4-8</span>
+                    <span class="meta-badge blooms-badge">Level 4</span>
+                </div>
+            </div>
+            <div class="prompt-body">
+                <div class="prompt-row">
+                    <div class="prompt-label">Artifact Required</div>
+                    <div class="artifact-box">Character trait graphic organizer or written notes</div>
+                </div>
+                <div class="prompt-row">
+                    <div class="prompt-label">Oral Prompt</div>
+                    <div class="oral-prompt">"Choose one character from the book. Describe two of their key traits and
+                        explain how these traits affect their actions in the story."</div>
+                </div>
+                <div class="prompt-row">
+                    <div class="prompt-label">Follow-up Questions</div>
+                    <ul class="followups">
+                        <li>"Can you point to a specific scene where this trait is shown?"</li>
+                        <li>"How might the story have changed if this character had the opposite trait?"</li>
+                        <li>"Which character in the book changed the most? Why?"</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="prompt-card">
+            <div class="prompt-header">
+                <span class="prompt-title">Argumentative Writing Defense</span>
+                <div class="prompt-meta">
+                    <span class="meta-badge grade-badge">Grades 6-8</span>
+                    <span class="meta-badge blooms-badge">Levels 5-6</span>
+                </div>
+            </div>
+            <div class="prompt-body">
+                <div class="prompt-row">
+                    <div class="prompt-label">Artifact Required</div>
+                    <div class="artifact-box">Completed argumentative essay or outline</div>
+                </div>
+                <div class="prompt-row">
+                    <div class="prompt-label">Oral Prompt</div>
+                    <div class="oral-prompt">"Summarize your main argument. What is your claim, and what's your
+                        strongest piece of evidence?"</div>
+                </div>
+                <div class="prompt-row">
+                    <div class="prompt-label">Follow-up Questions</div>
+                    <ul class="followups">
+                        <li>"What's the best counterargument? How would you respond?"</li>
+                        <li>"Why did you choose this evidence over other options?"</li>
+                        <li>"If you had to convince someone who disagreed, what would you say first?"</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Math Section -->
+    <div class="subject-section math">
+        <div class="subject-header">
+            <div class="subject-icon">🔢</div>
+            <h2>Mathematics</h2>
+        </div>
+
+        <div class="prompt-card">
+            <div class="prompt-header">
+                <span class="prompt-title">Problem-Solving Strategy</span>
+                <div class="prompt-meta">
+                    <span class="meta-badge grade-badge">Grades 3-5</span>
+                    <span class="meta-badge blooms-badge">Levels 2-3</span>
+                </div>
+            </div>
+            <div class="prompt-body">
+                <div class="prompt-row">
+                    <div class="prompt-label">Artifact Required</div>
+                    <div class="artifact-box">Handwritten math work showing problem and solution</div>
+                </div>
+                <div class="prompt-row">
+                    <div class="prompt-label">Oral Prompt</div>
+                    <div class="oral-prompt">"Look at your work. Explain step-by-step how you solved this problem."
+                    </div>
+                </div>
+                <div class="prompt-row">
+                    <div class="prompt-label">Follow-up Questions</div>
+                    <ul class="followups">
+                        <li>"Why did you start with that first step?"</li>
+                        <li>"Is there another way you could have solved this?"</li>
+                        <li>"Where did you use math facts you already knew?"</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="prompt-card">
+            <div class="prompt-header">
+                <span class="prompt-title">Error Analysis</span>
+                <div class="prompt-meta">
+                    <span class="meta-badge grade-badge">Grades 4-8</span>
+                    <span class="meta-badge blooms-badge">Level 4</span>
+                </div>
+            </div>
+            <div class="prompt-body">
+                <div class="prompt-row">
+                    <div class="prompt-label">Artifact Required</div>
+                    <div class="artifact-box">Worked problem with an intentional error (provided by teacher) and student
+                        correction</div>
+                </div>
+                <div class="prompt-row">
+                    <div class="prompt-label">Oral Prompt</div>
+                    <div class="oral-prompt">"Look at the mistake in this problem. Explain what went wrong and how you
+                        fixed it."</div>
+                </div>
+                <div class="prompt-row">
+                    <div class="prompt-label">Follow-up Questions</div>
+                    <ul class="followups">
+                        <li>"How did you know something was wrong?"</li>
+                        <li>"Why might someone make this mistake?"</li>
+                        <li>"What would you tell a classmate to help them avoid this error?"</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="prompt-card">
+            <div class="prompt-header">
+                <span class="prompt-title">Multi-Step Problem Defense</span>
+                <div class="prompt-meta">
+                    <span class="meta-badge grade-badge">Grades 5-8</span>
+                    <span class="meta-badge blooms-badge">Levels 5-6</span>
+                </div>
+            </div>
+            <div class="prompt-body">
+                <div class="prompt-row">
+                    <div class="prompt-label">Artifact Required</div>
+                    <div class="artifact-box">Complex word problem with full work shown</div>
+                </div>
+                <div class="prompt-row">
+                    <div class="prompt-label">Oral Prompt</div>
+                    <div class="oral-prompt">"Walk me through your solution. Focus on WHY you chose each step, not just
+                        what you did."</div>
+                </div>
+                <div class="prompt-row">
+                    <div class="prompt-label">Follow-up Questions</div>
+                    <ul class="followups">
+                        <li>"What would happen if this number changed to _____?"</li>
+                        <li>"Which step was the trickiest? Why?"</li>
+                        <li>"How did you check that your answer makes sense?"</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Science Section -->
+    <div class="subject-section science">
+        <div class="subject-header">
+            <div class="subject-icon">🔬</div>
+            <h2>Science</h2>
+        </div>
+
+        <div class="prompt-card">
+            <div class="prompt-header">
+                <span class="prompt-title">Lab Observation</span>
+                <div class="prompt-meta">
+                    <span class="meta-badge grade-badge">Grades 3-5</span>
+                    <span class="meta-badge blooms-badge">Levels 2-3</span>
+                </div>
+            </div>
+            <div class="prompt-body">
+                <div class="prompt-row">
+                    <div class="prompt-label">Artifact Required</div>
+                    <div class="artifact-box">Lab worksheet or observation notes/drawings</div>
+                </div>
+                <div class="prompt-row">
+                    <div class="prompt-label">Oral Prompt</div>
+                    <div class="oral-prompt">"Describe what you observed during the experiment. What happened and why do
+                        you think it happened?"</div>
+                </div>
+                <div class="prompt-row">
+                    <div class="prompt-label">Follow-up Questions</div>
+                    <ul class="followups">
+                        <li>"What did you notice that surprised you?"</li>
+                        <li>"What would happen if we changed _____?"</li>
+                        <li>"How does this connect to what we learned in class?"</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="prompt-card">
+            <div class="prompt-header">
+                <span class="prompt-title">Data Analysis</span>
+                <div class="prompt-meta">
+                    <span class="meta-badge grade-badge">Grades 5-8</span>
+                    <span class="meta-badge blooms-badge">Level 4</span>
+                </div>
+            </div>
+            <div class="prompt-body">
+                <div class="prompt-row">
+                    <div class="prompt-label">Artifact Required</div>
+                    <div class="artifact-box">Data table, graph, or chart from lab work</div>
+                </div>
+                <div class="prompt-row">
+                    <div class="prompt-label">Oral Prompt</div>
+                    <div class="oral-prompt">"Look at your data. What patterns do you notice? Explain what the data
+                        tells us about our question."</div>
+                </div>
+                <div class="prompt-row">
+                    <div class="prompt-label">Follow-up Questions</div>
+                    <ul class="followups">
+                        <li>"Is there any data that doesn't fit the pattern? Why might that be?"</li>
+                        <li>"What's the most important piece of evidence in your data?"</li>
+                        <li>"What would you predict if we ran the experiment again with _____?"</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="prompt-card">
+            <div class="prompt-header">
+                <span class="prompt-title">Phenomenon Explanation</span>
+                <div class="prompt-meta">
+                    <span class="meta-badge grade-badge">Grades 5-8</span>
+                    <span class="meta-badge blooms-badge">Levels 5-6</span>
+                </div>
+            </div>
+            <div class="prompt-body">
+                <div class="prompt-row">
+                    <div class="prompt-label">Artifact Required</div>
+                    <div class="artifact-box">Diagram or model explaining a scientific phenomenon</div>
+                </div>
+                <div class="prompt-row">
+                    <div class="prompt-label">Oral Prompt</div>
+                    <div class="oral-prompt">"Explain how [phenomenon] works using your model. Describe what's happening
+                        at each stage."</div>
+                </div>
+                <div class="prompt-row">
+                    <div class="prompt-label">Follow-up Questions</div>
+                    <ul class="followups">
+                        <li>"What would happen if _____ was removed from this system?"</li>
+                        <li>"How is this similar to another phenomenon we've studied?"</li>
+                        <li>"What's the most important part of this process? Why?"</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Social Studies Section -->
+    <div class="subject-section social">
+        <div class="subject-header">
+            <div class="subject-icon">🌍</div>
+            <h2>Social Studies</h2>
+        </div>
+
+        <div class="prompt-card">
+            <div class="prompt-header">
+                <span class="prompt-title">Primary Source Analysis</span>
+                <div class="prompt-meta">
+                    <span class="meta-badge grade-badge">Grades 4-8</span>
+                    <span class="meta-badge blooms-badge">Levels 3-4</span>
+                </div>
+            </div>
+            <div class="prompt-body">
+                <div class="prompt-row">
+                    <div class="prompt-label">Artifact Required</div>
+                    <div class="artifact-box">Annotated primary source document or SOAP analysis</div>
+                </div>
+                <div class="prompt-row">
+                    <div class="prompt-label">Oral Prompt</div>
+                    <div class="oral-prompt">"Look at the primary source you analyzed. Who created this, why, and what
+                        does it tell us about this time period?"</div>
+                </div>
+                <div class="prompt-row">
+                    <div class="prompt-label">Follow-up Questions</div>
+                    <ul class="followups">
+                        <li>"What perspective is missing from this source?"</li>
+                        <li>"How might someone from a different background interpret this differently?"</li>
+                        <li>"Is this source reliable? Why or why not?"</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="prompt-card">
+            <div class="prompt-header">
+                <span class="prompt-title">Compare & Contrast</span>
+                <div class="prompt-meta">
+                    <span class="meta-badge grade-badge">Grades 4-8</span>
+                    <span class="meta-badge blooms-badge">Level 4</span>
+                </div>
+            </div>
+            <div class="prompt-body">
+                <div class="prompt-row">
+                    <div class="prompt-label">Artifact Required</div>
+                    <div class="artifact-box">Venn diagram or comparison chart</div>
+                </div>
+                <div class="prompt-row">
+                    <div class="prompt-label">Oral Prompt</div>
+                    <div class="oral-prompt">"Compare [Topic A] and [Topic B]. What's the most important similarity?
+                        What's the most important difference?"</div>
+                </div>
+                <div class="prompt-row">
+                    <div class="prompt-label">Follow-up Questions</div>
+                    <ul class="followups">
+                        <li>"Why do you think this difference existed?"</li>
+                        <li>"How did this similarity/difference affect what happened next?"</li>
+                        <li>"Which one would you rather experience? Why?"</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="prompt-card">
+            <div class="prompt-header">
+                <span class="prompt-title">Historical Argument</span>
+                <div class="prompt-meta">
+                    <span class="meta-badge grade-badge">Grades 6-8</span>
+                    <span class="meta-badge blooms-badge">Levels 5-6</span>
+                </div>
+            </div>
+            <div class="prompt-body">
+                <div class="prompt-row">
+                    <div class="prompt-label">Artifact Required</div>
+                    <div class="artifact-box">Thesis statement with supporting evidence notes</div>
+                </div>
+                <div class="prompt-row">
+                    <div class="prompt-label">Oral Prompt</div>
+                    <div class="oral-prompt">"State your historical claim and defend it with at least two pieces of
+                        evidence."</div>
+                </div>
+                <div class="prompt-row">
+                    <div class="prompt-label">Follow-up Questions</div>
+                    <ul class="followups">
+                        <li>"A historian disagrees and says _____. How would you respond?"</li>
+                        <li>"Which piece of evidence is strongest? Why?"</li>
+                        <li>"What additional evidence would make your argument better?"</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Template Section -->
+    <div class="template-section">
+        <h3>📝 Template for Creating Your Own Prompts</h3>
+        <table class="template-table">
+            <thead>
+                <tr>
+                    <th>Element</th>
+                    <th>Your Prompt</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Subject/Topic</td>
+                    <td>
+                        <div class="template-input"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Grade Level</td>
+                    <td>
+                        <div class="template-input"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Bloom's Level</td>
+                    <td>
+                        <div class="template-input"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Artifact Required</td>
+                    <td>
+                        <div class="template-input"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Oral Prompt</td>
+                    <td>
+                        <div class="template-input"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Follow-up Question 1</td>
+                    <td>
+                        <div class="template-input"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Follow-up Question 2</td>
+                    <td>
+                        <div class="template-input"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Follow-up Question 3</td>
+                    <td>
+                        <div class="template-input"></div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Tips Section -->
+    <div class="tips-section">
+        <h3>💡 Prompt Design Tips</h3>
+        <ol>
+            <li><strong>Keep prompts focused.</strong> One clear question, not multi-part.</li>
+            <li><strong>Require artifact reference.</strong> Students should look at and mention their work.</li>
+            <li><strong>Use open-ended language.</strong> "Explain how..." not "What is the answer to..."</li>
+            <li><strong>Plan 2-3 follow-ups.</strong> These reveal depth.</li>
+            <li><strong>Match Bloom's level.</strong> Don't ask Level 5 questions in Week 1.</li>
+        </ol>
+    </div>
+
+    <div class="cta">
+        <h3>Need help designing prompts for your subject?</h3>
+        <p>SayVeritas includes a prompt library and AI-assisted prompt design—plus Socratic follow-ups that adapt to
+            each student's response.</p>
+        <div class="cta-buttons">
+            <a href="https://www.sayveritas.com" class="cta-button cta-button-primary">👉 Explore SayVeritas</a>
+            <a href="https://www.sayveritas.com/#webinars" class="cta-button cta-button-secondary">🎓 Join a Weekly
+                Webinar</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>DO Show and Tell | doshowandtell.com</p>
+        <div class="cc-badge"><span>🅭🅯🄍</span><span>Creative Commons BY-NC</span></div>
+    </footer>
+</body>
+
+</html>

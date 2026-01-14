@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4-Week Implementation Guide | DO Show and Tell</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 24px;
+            background: #f8fafc;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 32px;
+            padding-bottom: 24px;
+            border-bottom: 3px solid #0f172a;
+        }
+
+        .logo {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #dbeafe;
+            color: #1e40af;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 8px;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            color: #475569;
+        }
+
+        .intro {
+            font-size: 1rem;
+            margin-bottom: 32px;
+            padding: 20px;
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            border-radius: 12px;
+            border-left: 4px solid #0ea5e9;
+        }
+
+        .golden-rule {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            border: 2px solid #d97706;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+
+        .golden-rule h3 {
+            color: #b45309;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .golden-rule p {
+            color: #78350f;
+            font-size: 0.95rem;
+        }
+
+        /* Week Sections */
+        .week-section {
+            margin-bottom: 32px;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 2px solid;
+        }
+
+        .week-header {
+            padding: 20px 24px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .week-number {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .week-title-group h2 {
+            font-size: 1.25rem;
+            margin-bottom: 4px;
+        }
+
+        .week-meta {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        .blooms-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-left: 8px;
+        }
+
+        .week-body {
+            background: white;
+            padding: 24px;
+        }
+
+        /* Week 1 - Purple */
+        .week-1 {
+            border-color: #7c3aed;
+        }
+
+        .week-1 .week-header {
+            background: linear-gradient(135deg, #ede9fe, #ddd6fe);
+        }
+
+        .week-1 .week-number {
+            background: #7c3aed;
+            color: white;
+        }
+
+        .week-1 .week-title-group h2 {
+            color: #5b21b6;
+        }
+
+        .week-1 .blooms-badge {
+            background: #5b21b6;
+            color: white;
+        }
+
+        /* Week 2 - Blue */
+        .week-2 {
+            border-color: #2563eb;
+        }
+
+        .week-2 .week-header {
+            background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+        }
+
+        .week-2 .week-number {
+            background: #2563eb;
+            color: white;
+        }
+
+        .week-2 .week-title-group h2 {
+            color: #1d4ed8;
+        }
+
+        .week-2 .blooms-badge {
+            background: #1d4ed8;
+            color: white;
+        }
+
+        /* Week 3 - Teal */
+        .week-3 {
+            border-color: #0d9488;
+        }
+
+        .week-3 .week-header {
+            background: linear-gradient(135deg, #ccfbf1, #99f6e4);
+        }
+
+        .week-3 .week-number {
+            background: #0d9488;
+            color: white;
+        }
+
+        .week-3 .week-title-group h2 {
+            color: #0f766e;
+        }
+
+        .week-3 .blooms-badge {
+            background: #0f766e;
+            color: white;
+        }
+
+        /* Week 4 - Orange */
+        .week-4 {
+            border-color: #ea580c;
+        }
+
+        .week-4 .week-header {
+            background: linear-gradient(135deg, #ffedd5, #fed7aa);
+        }
+
+        .week-4 .week-number {
+            background: #ea580c;
+            color: white;
+        }
+
+        .week-4 .week-title-group h2 {
+            color: #c2410c;
+        }
+
+        .week-4 .blooms-badge {
+            background: #c2410c;
+            color: white;
+        }
+
+        /* Activity Table */
+        .activity-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+
+        .activity-table th {
+            text-align: left;
+            background: #f1f5f9;
+            padding: 10px 12px;
+            font-weight: 600;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .activity-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #e2e8f0;
+            vertical-align: top;
+        }
+
+        .activity-table td:first-child {
+            font-weight: 600;
+            white-space: nowrap;
+            width: 35%;
+        }
+
+        /* Assessment Design Box */
+        .assessment-design {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 16px;
+        }
+
+        .assessment-design h4 {
+            font-size: 0.9rem;
+            color: #475569;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .assessment-design ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+        }
+
+        .assessment-design li {
+            font-size: 0.85rem;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .assessment-design li:before {
+            content: "•";
+            position: absolute;
+            left: 8px;
+            color: #64748b;
+        }
+
+        /* Sample Prompts */
+        .sample-prompts {
+            border-left: 3px solid #cbd5e1;
+            padding-left: 16px;
+        }
+
+        .sample-prompts h4 {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .sample-prompts ul {
+            list-style: none;
+        }
+
+        .sample-prompts li {
+            font-size: 0.9rem;
+            font-style: italic;
+            color: #334155;
+            padding: 4px 0;
+        }
+
+        .sample-prompts li:before {
+            content: "" ";
+ color: #94a3b8;
+        }
+
+        /* Time Investment Table */
+        .time-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 24px;
+            font-size: 0.9rem;
+        }
+
+        .time-table th {
+            text-align: left;
+            background: #0f172a;
+            color: white;
+            padding: 12px;
+        }
+
+        .time-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .time-table tr:last-child {
+            background: #f0f9ff;
+            font-weight: 600;
+        }
+
+        .time-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Mistakes */
+        .mistakes {
+            background: #fef2f2;
+            border: 2px solid #fecaca;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .mistakes h3 {
+            color: #b91c1c;
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+        }
+
+        .mistakes ul {
+            list-style: none;
+        }
+
+        .mistakes li {
+            padding: 8px 0 8px 28px;
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .mistakes li:before {
+            content: "❌";
+            position: absolute;
+            left: 0;
+        }
+
+        /* CTA */
+        .cta {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: white;
+            padding: 24px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .cta h3 {
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+        }
+
+        .cta p {
+            font-size: 0.95rem;
+            color: #94a3b8;
+            margin-bottom: 16px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: transform 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .cta-button-primary {
+            background: #3b82f6;
+            color: white;
+        }
+
+        .cta-button-secondary {
+            background: white;
+            color: #0f172a;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .footer p {
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        .cc-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: #94a3b8;
+        }
+
+        @media print {
+            body {
+                padding: 0;
+                margin: 0.5in;
+                max-width: 100%;
+                background: white;
+            }
+
+            .week-section {
+                break-inside: avoid;
+            }
+
+            .cta-button {
+                border: 1px solid #333;
+            }
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .assessment-design ul {
+                grid-template-columns: 1fr;
+            }
+
+            .activity-table td:first-child {
+                white-space: normal;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="logo">DO Show and Tell</div>
+        <span class="badge">Teacher Resource</span>
+        <h1>The 4-Week Transition</h1>
+        <p class="tagline">From Traditional Assessment to DO Show and Tell</p>
+    </header>
+
+    <div class="intro">
+        <strong>For teachers new to oral assessment:</strong> This guide walks you through a scaffolded rollout. Each
+        week builds student skills progressively—matching your assessment to what you've taught at each Bloom's level.
+    </div>
+
+    <div class="golden-rule">
+        <h3>🌟 The Golden Rule</h3>
+        <p>Don't assess at Level 5 (Evaluate) if you taught at Level 1-2 (Remember). Build progressively.</p>
+    </div>
+
+    <!-- Week 1 -->
+    <div class="week-section week-1">
+        <div class="week-header">
+            <div class="week-number">1</div>
+            <div class="week-title-group">
+                <h2>Building the Foundation <span class="blooms-badge">Levels 1-2</span></h2>
+                <p class="week-meta">Goal: Introduce the format, build comfort, eliminate tech anxiety</p>
+            </div>
+        </div>
+        <div class="week-body">
+            <table class="activity-table">
+                <thead>
+                    <tr>
+                        <th>Activity</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Explain the Process (10 min)</td>
+                        <td>Tell students what oral assessment is and WHY it matters: "This shows YOUR
+                            thinking—something AI can't fake."</td>
+                    </tr>
+                    <tr>
+                        <td>Model Good Responses</td>
+                        <td>Play 2-3 example recordings. Show what "great" sounds like.</td>
+                    </tr>
+                    <tr>
+                        <td>Practice Assessment (No Grade)</td>
+                        <td>2-3 simple questions: "Explain the main idea of...", "Describe what we learned about..."
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Debrief</td>
+                        <td>Ask: "What felt easy? What was tricky?" Address tech issues.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="assessment-design">
+                <h4>Assessment Design</h4>
+                <ul>
+                    <li>Questions at Remember/Understand level</li>
+                    <li>30-45 second response time</li>
+                    <li>NO follow-up questions</li>
+                    <li>Practice Mode only (no grade)</li>
+                </ul>
+            </div>
+
+            <div class="sample-prompts">
+                <h4>Sample Prompts</h4>
+                <ul>
+                    <li>Explain the three branches of government."</li>
+                    <li>Describe the water cycle in your own words."</li>
+                    <li>What is the main idea of Chapter 3?"</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Week 2 -->
+    <div class="week-section week-2">
+        <div class="week-header">
+            <div class="week-number">2</div>
+            <div class="week-title-group">
+                <h2>Building Skills <span class="blooms-badge">Levels 3-4</span></h2>
+                <p class="week-meta">Goal: Add depth, practice citing evidence, low-stakes graded assessment</p>
+            </div>
+        </div>
+        <div class="week-body">
+            <table class="activity-table">
+                <thead>
+                    <tr>
+                        <th>Activity</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Teach Evidence Integration</td>
+                        <td>Model how to naturally reference your work while explaining.</td>
+                    </tr>
+                    <tr>
+                        <td>Think-Aloud Demo</td>
+                        <td>Teacher models analyzing a sample artifact aloud.</td>
+                    </tr>
+                    <tr>
+                        <td>Formative Assessment (5-10%)</td>
+                        <td>2-3 questions requiring analysis. Students upload work artifact.</td>
+                    </tr>
+                    <tr>
+                        <td>Provide Feedback</td>
+                        <td>Use AI-generated scores + add personal comments to struggling students.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="assessment-design">
+                <h4>Assessment Design</h4>
+                <ul>
+                    <li>Questions at Apply/Analyze level</li>
+                    <li>60-75 second response time</li>
+                    <li>1 optional follow-up question</li>
+                    <li>Low-stakes grade (5-10%)</li>
+                </ul>
+            </div>
+
+            <div class="sample-prompts">
+                <h4>Sample Prompts</h4>
+                <ul>
+                    <li>Explain your problem-solving strategy. Why did you approach it this way?"</li>
+                    <li>Compare the two characters we studied. What do they have in common?"</li>
+                    <li>Look at your lab data. What pattern do you see and why?"</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Week 3 -->
+    <div class="week-section week-3">
+        <div class="week-header">
+            <div class="week-number">3</div>
+            <div class="week-title-group">
+                <h2>Increasing Rigor <span class="blooms-badge">Levels 4-5</span></h2>
+                <p class="week-meta">Goal: Enable Socratic follow-ups, build reasoning stamina</p>
+            </div>
+        </div>
+        <div class="week-body">
+            <table class="activity-table">
+                <thead>
+                    <tr>
+                        <th>Activity</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Teach Responding to Follow-Ups</td>
+                        <td>Explain: "The system may ask you to go deeper. That's normal!"</td>
+                    </tr>
+                    <tr>
+                        <td>Partner Practice</td>
+                        <td>Students practice explaining their work to a partner before recording.</td>
+                    </tr>
+                    <tr>
+                        <td>Formative Assessment (10-15%)</td>
+                        <td>2-3 questions with Socratic follow-ups enabled.</td>
+                    </tr>
+                    <tr>
+                        <td>Compare Week 2 vs 3</td>
+                        <td>Celebrate improvement. Note where students still struggle.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="assessment-design">
+                <h4>Assessment Design</h4>
+                <ul>
+                    <li>Questions at Analyze/Evaluate level</li>
+                    <li>75-90 second response time</li>
+                    <li>Socratic follow-ups ENABLED</li>
+                    <li>Medium-stakes grade (10-15%)</li>
+                </ul>
+            </div>
+
+            <div class="sample-prompts">
+                <h4>Sample Prompts</h4>
+                <ul>
+                    <li>Evaluate which solution is better and defend your choice."</li>
+                    <li>A classmate says your conclusion is wrong. How would you respond?"</li>
+                    <li>What's the strongest piece of evidence in your work? Why?"</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Week 4 -->
+    <div class="week-section week-4">
+        <div class="week-header">
+            <div class="week-number">4</div>
+            <div class="week-title-group">
+                <h2>Summative Success <span class="blooms-badge">Levels 5-6</span></h2>
+                <p class="week-meta">Goal: Full oral assessment with artifacts and follow-ups</p>
+            </div>
+        </div>
+        <div class="week-body">
+            <table class="activity-table">
+                <thead>
+                    <tr>
+                        <th>Activity</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Review Success Strategies</td>
+                        <td>Students recall what works: "Take your time. Reference your work. It's okay to think."</td>
+                    </tr>
+                    <tr>
+                        <td>Goal Setting</td>
+                        <td>Each student writes: "One thing I want to do well in this assessment..."</td>
+                    </tr>
+                    <tr>
+                        <td>Summative Assessment (20-25%)</td>
+                        <td>Multi-question assessment with full Socratic dialogue.</td>
+                    </tr>
+                    <tr>
+                        <td>Celebrate & Reflect</td>
+                        <td>Debrief: "What did you learn about your own thinking?"</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="assessment-design">
+                <h4>Assessment Design</h4>
+                <ul>
+                    <li>Questions at Evaluate/Create level</li>
+                    <li>90-120 second response time</li>
+                    <li>Full Socratic follow-ups</li>
+                    <li>Summative grade (20-25%)</li>
+                </ul>
+            </div>
+
+            <div class="sample-prompts">
+                <h4>Sample Prompts</h4>
+                <ul>
+                    <li>Defend your thesis using evidence from multiple sources."</li>
+                    <li>Explain how you would solve this problem differently if X changed."</li>
+                    <li>Synthesize what we learned this unit. What's the biggest takeaway?"</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Time Investment Summary -->
+    <h3 style="margin-bottom: 16px; color: #0f172a;">⏱️ Time Investment Summary</h3>
+    <table class="time-table">
+        <thead>
+            <tr>
+                <th>Week</th>
+                <th>Prep Time</th>
+                <th>Class Time</th>
+                <th>Review Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Week 1</td>
+                <td>2-3 hours</td>
+                <td>15-20 min</td>
+                <td>15 min</td>
+            </tr>
+            <tr>
+                <td>Week 2</td>
+                <td>2 hours</td>
+                <td>20 min</td>
+                <td>30 min</td>
+            </tr>
+            <tr>
+                <td>Week 3</td>
+                <td>1.5 hours</td>
+                <td>15 min</td>
+                <td>30 min</td>
+            </tr>
+            <tr>
+                <td>Week 4</td>
+                <td>2 hours</td>
+                <td>15 min</td>
+                <td>45 min</td>
+            </tr>
+            <tr>
+                <td><strong>Total</strong></td>
+                <td><strong>7.5-8.5 hrs</strong></td>
+                <td><strong>~1 hr</strong></td>
+                <td><strong>2 hrs</strong></td>
+            </tr>
+        </tbody>
+    </table>
+    <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 32px; font-style: italic;">
+        *After your first unit, prep time drops to 3-4 hours total—you have templates and know the process.
+    </p>
+
+    <!-- Common Mistakes -->
+    <div class="mistakes">
+        <h3>Common Mistakes to Avoid</h3>
+        <ul>
+            <li>Skipping Practice Mode in Week 1</li>
+            <li>Using your essay prompts verbatim (too complex for oral)</li>
+            <li>Enabling follow-ups before Week 3</li>
+            <li>Grading oral responses like written essays</li>
+            <li>Forgetting to celebrate improvement</li>
+        </ul>
+    </div>
+
+    <div class="cta">
+        <h3>Ready to implement with support?</h3>
+        <p>SayVeritas provides the platform—Practice Mode, Socratic follow-ups, AI scoring, and class analytics—so you
+            can focus on teaching.</p>
+        <div class="cta-buttons">
+            <a href="https://www.sayveritas.com" class="cta-button cta-button-primary">👉 Start Your Free Trial</a>
+            <a href="https://www.sayveritas.com/#webinars" class="cta-button cta-button-secondary">🎓 Join a Weekly
+                Webinar</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>DO Show and Tell | doshowandtell.com</p>
+        <div class="cc-badge">
+            <span>🅭🅯🄍</span>
+            <span>Creative Commons BY-NC</span>
+        </div>
+    </footer>
+
+</body>
+
+</html>

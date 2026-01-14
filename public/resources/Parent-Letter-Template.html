@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parent Letter Template | DO Show and Tell</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: #1e293b;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 24px;
+            background: #f8fafc;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 32px;
+            padding-bottom: 24px;
+            border-bottom: 3px solid #0f172a;
+        }
+
+        .logo {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #dbeafe;
+            color: #1e40af;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 8px;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            color: #475569;
+        }
+
+        .intro {
+            font-size: 1rem;
+            margin-bottom: 32px;
+            padding: 20px;
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            border-radius: 12px;
+            border-left: 4px solid #0ea5e9;
+        }
+
+        .letter-container {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            padding: 40px;
+            margin-bottom: 32px;
+        }
+
+        .letterhead {
+            text-align: center;
+            padding-bottom: 24px;
+            margin-bottom: 24px;
+            border-bottom: 2px dashed #e2e8f0;
+            color: #94a3b8;
+            font-style: italic;
+        }
+
+        .salutation {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .letter-section {
+            margin-bottom: 24px;
+        }
+
+        .letter-section h3 {
+            font-size: 1rem;
+            color: #0f172a;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .letter-section p {
+            margin-bottom: 12px;
+            color: #334155;
+        }
+
+        .process-steps {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 16px 0;
+        }
+
+        .process-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 12px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .process-step:last-child {
+            border-bottom: none;
+        }
+
+        .step-number {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .step-1 .step-number {
+            background: #fef3c7;
+            color: #b45309;
+        }
+
+        .step-2 .step-number {
+            background: #dbeafe;
+            color: #1d4ed8;
+        }
+
+        .step-3 .step-number {
+            background: #d1fae5;
+            color: #047857;
+        }
+
+        .step-content h4 {
+            font-size: 0.95rem;
+            color: #0f172a;
+            margin-bottom: 4px;
+        }
+
+        .step-content p {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin: 0;
+        }
+
+        .benefits-list {
+            list-style: none;
+        }
+
+        .benefits-list li {
+            padding: 8px 0 8px 28px;
+            position: relative;
+        }
+
+        .benefits-list li:before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+        }
+
+        .support-box {
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 16px 0;
+        }
+
+        .support-box h4 {
+            color: #0369a1;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+
+        .support-box ul {
+            list-style: none;
+        }
+
+        .support-box li {
+            padding: 6px 0 6px 24px;
+            position: relative;
+            font-size: 0.9rem;
+        }
+
+        .support-box li:before {
+            content: "→";
+            position: absolute;
+            left: 8px;
+            color: #0369a1;
+        }
+
+        .closing {
+            margin-top: 32px;
+        }
+
+        .signature {
+            margin-top: 24px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .signature-fields {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .signature-field {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .signature-field span {
+            font-weight: 600;
+            color: #64748b;
+            min-width: 80px;
+        }
+
+        .signature-line {
+            flex: 1;
+            border-bottom: 1px solid #cbd5e1;
+            min-height: 24px;
+        }
+
+        .ps-note {
+            margin-top: 24px;
+            padding: 16px;
+            background: #fef3c7;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: #78350f;
+        }
+
+        .cta {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: white;
+            padding: 24px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .cta h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .cta p {
+            font-size: 0.9rem;
+            color: #94a3b8;
+            margin-bottom: 16px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .cta-button-primary {
+            background: #3b82f6;
+            color: white;
+        }
+
+        .cta-button-secondary {
+            background: white;
+            color: #0f172a;
+        }
+
+        .footer {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .footer p {
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        .cc-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: #94a3b8;
+        }
+
+        @media print {
+            body {
+                padding: 0;
+                margin: 0.5in;
+                max-width: 100%;
+                background: white;
+            }
+
+            .letter-container {
+                box-shadow: none;
+                border: 1px solid #e2e8f0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">DO Show and Tell</div>
+        <span class="badge">Teacher Resource</span>
+        <h1>A Letter to Families</h1>
+        <p class="tagline">What is DO Show and Tell?</p>
+    </header>
+
+    <div class="intro">
+        <strong>For teachers:</strong> Customize this letter and send home at the start of your implementation. Add your
+        name, grade level, and any specific details.
+    </div>
+
+    <div class="letter-container">
+        <div class="letterhead">[School Letterhead / Teacher Header]</div>
+
+        <p class="salutation"><strong>Dear Families,</strong></p>
+
+        <p>I'm excited to share a new approach we're using in our classroom this year called <strong>DO Show and
+                Tell</strong>.</p>
+
+        <div class="letter-section">
+            <h3>📝 What is it?</h3>
+            <p>You probably remember "show and tell" from elementary school—when students brought in an object and
+                talked about it in front of the class. DO Show and Tell brings that same idea back, but with an
+                important addition: the <strong>DO</strong>.</p>
+            <p>Here's how it works:</p>
+
+            <div class="process-steps">
+                <div class="process-step step-1">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>DO</h4>
+                        <p>Your child completes an assignment: solves a problem, writes a response, creates a project,
+                            or answers questions.</p>
+                    </div>
+                </div>
+                <div class="process-step step-2">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>SHOW</h4>
+                        <p>Your child takes a photo of their work (or uploads a digital file) to our platform.</p>
+                    </div>
+                </div>
+                <div class="process-step step-3">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>TELL</h4>
+                        <p>Our platform asks your child personalized questions about their work, and they answer by
+                            speaking aloud. It's like a conversation about their thinking.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="letter-section">
+            <h3>🎯 Why are we doing this?</h3>
+            <p>In today's world, students can easily use AI tools to complete written assignments without truly
+                understanding the material. But they can't fake thinking in a real-time conversation.</p>
+            <p>DO Show and Tell helps us:</p>
+            <ul class="benefits-list">
+                <li>Verify that your child truly understands the content</li>
+                <li>Build their verbal reasoning skills (essential for jobs, college, life!)</li>
+                <li>Give them a "voice" to explain their thinking—not just bubble in answers</li>
+                <li>Provide faster, more personalized feedback</li>
+            </ul>
+        </div>
+
+        <div class="letter-section">
+            <h3>👧 What does this mean for your child?</h3>
+            <ul class="benefits-list">
+                <li>They'll complete work as usual, then talk about it</li>
+                <li>They'll practice explaining their thinking clearly</li>
+                <li>They may feel nervous at first—that's normal! We do lots of practice rounds before any graded work
+                </li>
+                <li>Over time, they'll become more confident speakers and thinkers</li>
+            </ul>
+        </div>
+
+        <div class="letter-section">
+            <h3>🏠 How can you support at home?</h3>
+            <div class="support-box">
+                <ul>
+                    <li><strong>Ask "Why did you do it that way?"</strong> when your child does homework</li>
+                    <li><strong>Listen without interrupting</strong> as they explain their thinking</li>
+                    <li><strong>Encourage practice speaking aloud</strong> about schoolwork</li>
+                    <li><strong>Reassure them</strong> that "ums" and pauses are okay—we're listening for thinking, not
+                        perfection</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="letter-section">
+            <h3>❓ Questions?</h3>
+            <p>I'm happy to discuss! Feel free to email me or schedule a time to chat. You can also learn more about
+                this approach at <strong>DoShowAndTell.com</strong>.</p>
+        </div>
+
+        <p>Thank you for partnering with me to help your child become a stronger thinker and communicator.</p>
+
+        <div class="closing">
+            <p>Warm regards,</p>
+            <div class="signature">
+                <div class="signature-fields">
+                    <div class="signature-field"><span>Name:</span>
+                        <div class="signature-line"></div>
+                    </div>
+                    <div class="signature-field"><span>Subject:</span>
+                        <div class="signature-line"></div>
+                    </div>
+                    <div class="signature-field"><span>Email:</span>
+                        <div class="signature-line"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="cta">
+        <h3>Powered by SayVeritas</h3>
+        <p>The platform teachers use to conduct scalable oral assessments with AI-powered feedback.</p>
+        <div class="cta-buttons">
+            <a href="https://www.sayveritas.com" class="cta-button cta-button-primary">👉 Learn More</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>DO Show and Tell | doshowandtell.com</p>
+        <div class="cc-badge"><span>🅭🅯🄍</span><span>Creative Commons BY-NC</span></div>
+    </footer>
+</body>
+
+</html>

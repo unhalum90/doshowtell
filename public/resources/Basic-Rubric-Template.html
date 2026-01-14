@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Rubric Template | DO Show and Tell</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 24px;
+            background: #f8fafc;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 32px;
+            padding-bottom: 24px;
+            border-bottom: 3px solid #0f172a;
+        }
+
+        .logo {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #dbeafe;
+            color: #1e40af;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 8px;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            color: #475569;
+        }
+
+        .intro {
+            font-size: 1rem;
+            margin-bottom: 32px;
+            padding: 20px;
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            border-radius: 12px;
+            border-left: 4px solid #0ea5e9;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .section-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .section-header h2 {
+            font-size: 1.25rem;
+            color: #0f172a;
+        }
+
+        .rubric-section {
+            margin-bottom: 32px;
+        }
+
+        .rubric-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.8rem;
+            margin-bottom: 16px;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .rubric-table th {
+            padding: 10px 8px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.75rem;
+            background: #2563eb;
+            color: white;
+        }
+
+        .rubric-table td {
+            padding: 10px 8px;
+            border-top: 1px solid #e2e8f0;
+            vertical-align: top;
+        }
+
+        .rubric-table td:first-child {
+            font-weight: 600;
+        }
+
+        .part-a .section-icon {
+            background: #dbeafe;
+            color: #2563eb;
+        }
+
+        .part-b .section-icon {
+            background: #d1fae5;
+            color: #059669;
+        }
+
+        .part-b .rubric-table th {
+            background: #059669;
+        }
+
+        .score-box {
+            display: inline-block;
+            background: #f1f5f9;
+            border: 2px dashed #94a3b8;
+            border-radius: 8px;
+            padding: 12px 24px;
+            font-weight: 600;
+            margin-top: 8px;
+        }
+
+        .scoring-guide {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            margin-bottom: 32px;
+        }
+
+        .scoring-guide h3 {
+            background: #0f172a;
+            color: white;
+            padding: 12px 20px;
+            font-size: 1rem;
+        }
+
+        .scoring-guide table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .scoring-guide th,
+        .scoring-guide td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .scoring-guide th {
+            background: #f8fafc;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .grade-a {
+            background: #d1fae5;
+        }
+
+        .grade-b {
+            background: #dbeafe;
+        }
+
+        .grade-c {
+            background: #fef3c7;
+        }
+
+        .grade-d {
+            background: #fed7aa;
+        }
+
+        .grade-f {
+            background: #fecaca;
+        }
+
+        .weighting-section {
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .weighting-section h3 {
+            color: #0369a1;
+            margin-bottom: 16px;
+            font-size: 1.1rem;
+        }
+
+        .weighting-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .weighting-table th {
+            background: #0369a1;
+            color: white;
+            padding: 10px 16px;
+            text-align: left;
+        }
+
+        .weighting-table td {
+            padding: 10px 16px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .recommended {
+            background: #fef3c7;
+            font-weight: 600;
+        }
+
+        .quick-score {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .quick-score h3 {
+            color: #0f172a;
+            margin-bottom: 16px;
+            font-size: 1.1rem;
+        }
+
+        .quick-score-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .quick-score-table th {
+            background: #f1f5f9;
+            padding: 10px 12px;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        .quick-score-table th:first-child {
+            text-align: left;
+        }
+
+        .quick-score-table td {
+            padding: 10px 12px;
+            text-align: center;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .quick-score-table td:first-child {
+            text-align: left;
+            font-weight: 500;
+        }
+
+        .checkbox-symbol {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #94a3b8;
+            border-radius: 4px;
+        }
+
+        .notes-section {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            border: 2px solid #d97706;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .notes-section h3 {
+            color: #b45309;
+            margin-bottom: 16px;
+            font-size: 1.1rem;
+        }
+
+        .notes-section ul {
+            list-style: none;
+        }
+
+        .notes-section li {
+            padding: 8px 0 8px 28px;
+            position: relative;
+            color: #78350f;
+        }
+
+        .notes-section li:before {
+            content: "💡";
+            position: absolute;
+            left: 0;
+        }
+
+        .cta {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: white;
+            padding: 24px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .cta h3 {
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+        }
+
+        .cta p {
+            font-size: 0.95rem;
+            color: #94a3b8;
+            margin-bottom: 16px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: transform 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .cta-button-primary {
+            background: #3b82f6;
+            color: white;
+        }
+
+        .cta-button-secondary {
+            background: white;
+            color: #0f172a;
+        }
+
+        .footer {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .footer p {
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        .cc-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: #94a3b8;
+        }
+
+        @media print {
+            body {
+                padding: 0;
+                margin: 0.5in;
+                max-width: 100%;
+                background: white;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">DO Show and Tell</div>
+        <span class="badge">Teacher Resource</span>
+        <h1>DO Show and Tell Rubric</h1>
+        <p class="tagline">Assessing Artifacts + Oral Explanations</p>
+    </header>
+
+    <div class="intro">
+        <strong>For teachers:</strong> Use this rubric to assess both the student's work artifact (what they uploaded)
+        and their oral explanation (how they defend their thinking). Customize the criteria and language to fit your
+        subject and grade level.
+    </div>
+
+    <div class="rubric-section part-a">
+        <div class="section-header">
+            <div class="section-icon">📷</div>
+            <h2>Part A: The Artifact (The SHOW)</h2>
+        </div>
+        <table class="rubric-table">
+            <thead>
+                <tr>
+                    <th>Criteria</th>
+                    <th>Excellent (4)</th>
+                    <th>Proficient (3)</th>
+                    <th>Developing (2)</th>
+                    <th>Beginning (1)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Completeness</td>
+                    <td>Work is fully complete with all required elements</td>
+                    <td>Work is mostly complete; minor elements missing</td>
+                    <td>Work is partially complete; key elements missing</td>
+                    <td>Work is incomplete or missing major elements</td>
+                </tr>
+                <tr>
+                    <td>Accuracy</td>
+                    <td>All content is correct and demonstrates mastery</td>
+                    <td>Most content is correct; minor errors</td>
+                    <td>Some content is correct; several errors present</td>
+                    <td>Content contains significant errors</td>
+                </tr>
+                <tr>
+                    <td>Effort & Quality</td>
+                    <td>Work shows exceptional care and detail</td>
+                    <td>Work shows good effort and quality</td>
+                    <td>Work shows some effort but lacks polish</td>
+                    <td>Work appears rushed or minimal effort</td>
+                </tr>
+                <tr>
+                    <td>Organization</td>
+                    <td>Work is clearly organized and easy to follow</td>
+                    <td>Work is mostly organized with minor issues</td>
+                    <td>Work has some organization but confusing</td>
+                    <td>Work is disorganized or hard to follow</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="score-box">Artifact Score: _____ / 16</div>
+    </div>
+
+    <div class="rubric-section part-b">
+        <div class="section-header">
+            <div class="section-icon">🎤</div>
+            <h2>Part B: The Oral Explanation (The TELL)</h2>
+        </div>
+        <table class="rubric-table">
+            <thead>
+                <tr>
+                    <th>Criteria</th>
+                    <th>Excellent (4)</th>
+                    <th>Proficient (3)</th>
+                    <th>Developing (2)</th>
+                    <th>Beginning (1)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Explanation of Process</td>
+                    <td>Clearly explains what they did and steps taken</td>
+                    <td>Explains most of the process with minor gaps</td>
+                    <td>Explains some steps but lacks detail</td>
+                    <td>Unable to clearly explain what they did</td>
+                </tr>
+                <tr>
+                    <td>Reasoning & Justification</td>
+                    <td>Provides strong, logical reasons for choices</td>
+                    <td>Provides reasonable justifications</td>
+                    <td>Attempts to justify but reasoning is weak</td>
+                    <td>Cannot explain WHY they made choices</td>
+                </tr>
+                <tr>
+                    <td>Use of Evidence</td>
+                    <td>Naturally references work artifact</td>
+                    <td>References artifact appropriately</td>
+                    <td>Makes limited references to artifact</td>
+                    <td>Does not connect explanation to artifact</td>
+                </tr>
+                <tr>
+                    <td>Response to Follow-Ups</td>
+                    <td>Responds thoughtfully and expands</td>
+                    <td>Responds adequately with some depth</td>
+                    <td>Responds but struggles to add depth</td>
+                    <td>Unable to respond to follow-ups</td>
+                </tr>
+                <tr>
+                    <td>Clarity & Communication</td>
+                    <td>Speaks clearly, easy to understand</td>
+                    <td>Mostly clear with minor issues</td>
+                    <td>Somewhat difficult to follow</td>
+                    <td>Very difficult to understand</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="score-box">Oral Score: _____ / 20</div>
+    </div>
+
+    <div class="scoring-guide">
+        <h3>📊 Scoring Guide</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Total Score (out of 36)</th>
+                    <th>Grade</th>
+                    <th>Descriptor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="grade-a">
+                    <td>33-36</td>
+                    <td>A / Exceeds</td>
+                    <td>Outstanding demonstration of understanding</td>
+                </tr>
+                <tr class="grade-b">
+                    <td>29-32</td>
+                    <td>B / Meets</td>
+                    <td>Strong demonstration of understanding</td>
+                </tr>
+                <tr class="grade-c">
+                    <td>22-28</td>
+                    <td>C / Approaching</td>
+                    <td>Adequate demonstration with gaps</td>
+                </tr>
+                <tr class="grade-d">
+                    <td>15-21</td>
+                    <td>D / Developing</td>
+                    <td>Limited demonstration; reteaching needed</td>
+                </tr>
+                <tr class="grade-f">
+                    <td>Below 15</td>
+                    <td>F / Beginning</td>
+                    <td>Insufficient evidence of understanding</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="weighting-section">
+        <h3>⚖️ Weighting Options</h3>
+        <table class="weighting-table">
+            <thead>
+                <tr>
+                    <th>Emphasis</th>
+                    <th>Artifact Weight</th>
+                    <th>Oral Weight</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="recommended">
+                    <td>Balanced (recommended)</td>
+                    <td>40%</td>
+                    <td>60%</td>
+                </tr>
+                <tr>
+                    <td>Product-Focused</td>
+                    <td>60%</td>
+                    <td>40%</td>
+                </tr>
+                <tr>
+                    <td>Process-Focused</td>
+                    <td>30%</td>
+                    <td>70%</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="quick-score">
+        <h3>⚡ Quick-Score Version</h3>
+        <table class="quick-score-table">
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>3 (Got It)</th>
+                    <th>2 (Getting There)</th>
+                    <th>1 (Not Yet)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Completed the work</td>
+                    <td><span class="checkbox-symbol"></span></td>
+                    <td><span class="checkbox-symbol"></span></td>
+                    <td><span class="checkbox-symbol"></span></td>
+                </tr>
+                <tr>
+                    <td>Explained what they did</td>
+                    <td><span class="checkbox-symbol"></span></td>
+                    <td><span class="checkbox-symbol"></span></td>
+                    <td><span class="checkbox-symbol"></span></td>
+                </tr>
+                <tr>
+                    <td>Explained WHY</td>
+                    <td><span class="checkbox-symbol"></span></td>
+                    <td><span class="checkbox-symbol"></span></td>
+                    <td><span class="checkbox-symbol"></span></td>
+                </tr>
+                <tr>
+                    <td>Referenced their work</td>
+                    <td><span class="checkbox-symbol"></span></td>
+                    <td><span class="checkbox-symbol"></span></td>
+                    <td><span class="checkbox-symbol"></span></td>
+                </tr>
+                <tr>
+                    <td>Answered follow-ups</td>
+                    <td><span class="checkbox-symbol"></span></td>
+                    <td><span class="checkbox-symbol"></span></td>
+                    <td><span class="checkbox-symbol"></span></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="score-box" style="margin-top: 16px;">Quick Score: _____ / 15</div>
+    </div>
+
+    <div class="notes-section">
+        <h3>Notes for Oral Assessment Grading</h3>
+        <ul>
+            <li><strong>"Ums" and pauses are normal.</strong> Listen for thinking, not polish.</li>
+            <li><strong>Oral ≠ Written.</strong> Students won't speak in grammatical sentences. That's okay.</li>
+            <li><strong>Focus on reasoning.</strong> Can they explain WHY, not just WHAT?</li>
+            <li><strong>Listen for growth.</strong> Compare Week 4 to Week 1—celebrate progress.</li>
+        </ul>
+    </div>
+
+    <div class="cta">
+        <h3>Want AI-powered rubric scoring?</h3>
+        <p>SayVeritas automatically scores student responses using your rubric criteria.</p>
+        <div class="cta-buttons">
+            <a href="https://www.sayveritas.com" class="cta-button cta-button-primary">👉 See How It Works</a>
+            <a href="https://www.sayveritas.com/#webinars" class="cta-button cta-button-secondary">🎓 Join a Weekly
+                Webinar</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>DO Show and Tell | doshowandtell.com</p>
+        <div class="cc-badge"><span>🅭🅯🄍</span><span>Creative Commons BY-NC</span></div>
+    </footer>
+</body>
+
+</html>

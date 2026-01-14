@@ -132,6 +132,22 @@ export default function ResourcesPage() {
                                             <a href="/resources/Self-Reflection-Checklist.html" target="_blank" className="btn btn-primary w-full text-center">
                                                 Download
                                             </a>
+                                        ) : resource.title === "4-Week Implementation Guide" ? (
+                                            <a href="/resources/4-Week-Implementation-Guide.html" target="_blank" className="btn btn-primary w-full text-center">
+                                                Download
+                                            </a>
+                                        ) : resource.title === "Basic Rubric Template" ? (
+                                            <a href="/resources/Basic-Rubric-Template.html" target="_blank" className="btn btn-primary w-full text-center">
+                                                Download
+                                            </a>
+                                        ) : resource.title === "Parent Letter Template" ? (
+                                            <a href="/resources/Parent-Letter-Template.html" target="_blank" className="btn btn-primary w-full text-center">
+                                                Download
+                                            </a>
+                                        ) : resource.title === "Assignment Prompt Templates" ? (
+                                            <a href="/resources/Assignment-Prompt-Templates.html" target="_blank" className="btn btn-primary w-full text-center">
+                                                Download
+                                            </a>
                                         ) : (
                                             <button className="btn btn-secondary btn-sm w-full opacity-70 cursor-not-allowed bg-slate-200 text-slate-500 border-none pointer-events-none font-medium" disabled>
                                                 Coming Soon
