@@ -25,117 +25,136 @@ export default function BySubjectPage() {
                         Each subject has unique opportunities for DO Show and Tell. Here's how to adapt the methodology for your discipline.
                     </p>
 
-                    {/* ELA Section */}
-                    <section className="subject-section">
-                        <div className="subject-header ela">
-                            <span className="subject-icon">📚</span>
-                            <h2>Reading / ELA</h2>
-                        </div>
-                        <div className="subject-content">
-                            <h3>What students DO:</h3>
-                            <ul>
-                                <li>Annotate texts—underline, margin notes, questions</li>
-                                <li>Graphic organizers for character, theme, structure</li>
-                                <li>Response journals with personal connections</li>
-                            </ul>
+                    <div className="space-y-16">
 
-                            <h3>What students TELL:</h3>
-                            <ul>
-                                <li>"The main idea the author wants me to understand is..."</li>
-                                <li>"I noticed the author's choice to... because..."</li>
-                                <li>"This connected to my own experience when..."</li>
-                            </ul>
-
-                            <div className="prompt-box">
-                                <h4>Sample prompt:</h4>
-                                <p>"Read the short story and annotate for literary devices. In your recording, pick one device the author used and explain why it was effective."</p>
+                        {/* ELA Section */}
+                        <section className="subject-section">
+                            <div className="flex items-center gap-3 mb-6">
+                                <span className="text-4xl" role="img" aria-label="books">📚</span>
+                                <h2 className="text-3xl font-bold m-0">Reading / ELA</h2>
                             </div>
-                        </div>
-                    </section>
+                            <div className="subject-content grid md:grid-cols-2 gap-8">
+                                <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                                    <h3 className="text-xl font-bold mb-4 text-slate-900">What students DO:</h3>
+                                    <ul className="list-disc pl-5 space-y-2 text-slate-900 font-medium">
+                                        <li>Annotate texts—underline, margin notes, questions</li>
+                                        <li>Graphic organizers for character, theme, structure</li>
+                                        <li>Response journals with personal connections</li>
+                                    </ul>
+                                </div>
 
-                    {/* Math Section */}
-                    <section className="subject-section">
-                        <div className="subject-header math">
-                            <span className="subject-icon">🔢</span>
-                            <h2>Math</h2>
-                        </div>
-                        <div className="subject-content">
-                            <h3>What students DO:</h3>
-                            <ul>
-                                <li>Show all work for multi-step problems</li>
-                                <li>Write out strategy before calculating</li>
-                                <li>Create visual representations (number lines, diagrams)</li>
-                            </ul>
+                                <div className="bg-blue-50 p-6 rounded-xl border border-blue-100">
+                                    <h3 className="text-xl font-bold mb-4 text-blue-900">What students TELL:</h3>
+                                    <ul className="list-disc pl-5 space-y-2 text-blue-900 font-medium">
+                                        <li>"The main idea the author wants me to understand is..."</li>
+                                        <li>"I noticed the author's choice to... because..."</li>
+                                        <li>"This connected to my own experience when..."</li>
+                                    </ul>
+                                </div>
 
-                            <h3>What students TELL:</h3>
-                            <ul>
-                                <li>"First I noticed... so I decided to..."</li>
-                                <li>"The tricky part was... but I figured out..."</li>
-                                <li>"I checked my work by..."</li>
-                            </ul>
-
-                            <div className="prompt-box">
-                                <h4>Sample prompt:</h4>
-                                <p>"Solve problems 1-5. Pick the one that was most challenging. Show your work, then explain your thinking step-by-step and why you chose that approach."</p>
+                                <div className="prompt-box md:col-span-2 bg-yellow-50 p-6 rounded-xl border-l-4 border-yellow-400">
+                                    <h4 className="font-bold text-yellow-900 mb-2 uppercase tracking-wide text-sm">Sample prompt</h4>
+                                    <p className="text-lg text-slate-900 italic font-medium">"Read the short story and annotate for literary devices. In your recording, pick one device the author used and explain why it was effective."</p>
+                                </div>
                             </div>
-                        </div>
-                    </section>
+                        </section>
 
-                    {/* Science Section */}
-                    <section className="subject-section">
-                        <div className="subject-header science">
-                            <span className="subject-icon">🔬</span>
-                            <h2>Science</h2>
-                        </div>
-                        <div className="subject-content">
-                            <h3>What students DO:</h3>
-                            <ul>
-                                <li>Lab notebooks with observations and data</li>
-                                <li>Diagrams with labels and annotations</li>
-                                <li>Hypothesis testing and evidence recording</li>
-                            </ul>
-
-                            <h3>What students TELL:</h3>
-                            <ul>
-                                <li>"I predicted... but found... which means..."</li>
-                                <li>"The evidence that supports my conclusion is..."</li>
-                                <li>"If I did this experiment again, I would change..."</li>
-                            </ul>
-
-                            <div className="prompt-box">
-                                <h4>Sample prompt:</h4>
-                                <p>"After the experiment, record your observations. In your voice explanation, connect what you observed to the scientific concept we studied."</p>
+                        {/* Math Section */}
+                        <section className="subject-section">
+                            <div className="flex items-center gap-3 mb-6">
+                                <span className="text-4xl" role="img" aria-label="numbers">🔢</span>
+                                <h2 className="text-3xl font-bold m-0">Math</h2>
                             </div>
-                        </div>
-                    </section>
+                            <div className="subject-content grid md:grid-cols-2 gap-8">
+                                <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                                    <h3 className="text-xl font-bold mb-4 text-slate-900">What students DO:</h3>
+                                    <ul className="list-disc pl-5 space-y-2 text-slate-900 font-medium">
+                                        <li>Show all work for multi-step problems</li>
+                                        <li>Write out strategy before calculating</li>
+                                        <li>Create visual representations (number lines, diagrams)</li>
+                                    </ul>
+                                </div>
 
-                    {/* Social Studies Section */}
-                    <section className="subject-section">
-                        <div className="subject-header socstudies">
-                            <span className="subject-icon">🌍</span>
-                            <h2>Social Studies</h2>
-                        </div>
-                        <div className="subject-content">
-                            <h3>What students DO:</h3>
-                            <ul>
-                                <li>Primary source analysis with evidence marks</li>
-                                <li>Timeline annotations and cause-effect maps</li>
-                                <li>Comparison charts across time periods or cultures</li>
-                            </ul>
+                                <div className="bg-blue-50 p-6 rounded-xl border border-blue-100">
+                                    <h3 className="text-xl font-bold mb-4 text-blue-900">What students TELL:</h3>
+                                    <ul className="list-disc pl-5 space-y-2 text-blue-900 font-medium">
+                                        <li>"First I noticed... so I decided to..."</li>
+                                        <li>"The tricky part was... but I figured out..."</li>
+                                        <li>"I checked my work by..."</li>
+                                    </ul>
+                                </div>
 
-                            <h3>What students TELL:</h3>
-                            <ul>
-                                <li>"The most significant cause of... was..."</li>
-                                <li>"This primary source reveals... because..."</li>
-                                <li>"I would argue that... and my evidence is..."</li>
-                            </ul>
-
-                            <div className="prompt-box">
-                                <h4>Sample prompt:</h4>
-                                <p>"Analyze the historical document. Annotate for perspective, bias, and key claims. In your recording, explain what this source tells us and what it might be leaving out."</p>
+                                <div className="prompt-box md:col-span-2 bg-yellow-50 p-6 rounded-xl border-l-4 border-yellow-400">
+                                    <h4 className="font-bold text-yellow-900 mb-2 uppercase tracking-wide text-sm">Sample prompt</h4>
+                                    <p className="text-lg text-slate-900 italic font-medium">"Solve problems 1-5. Pick the one that was most challenging. Show your work, then explain your thinking step-by-step and why you chose that approach."</p>
+                                </div>
                             </div>
-                        </div>
-                    </section>
+                        </section>
+
+                        {/* Science Section */}
+                        <section className="subject-section">
+                            <div className="flex items-center gap-3 mb-6">
+                                <span className="text-4xl" role="img" aria-label="microscope">🔬</span>
+                                <h2 className="text-3xl font-bold m-0">Science</h2>
+                            </div>
+                            <div className="subject-content grid md:grid-cols-2 gap-8">
+                                <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                                    <h3 className="text-xl font-bold mb-4 text-slate-900">What students DO:</h3>
+                                    <ul className="list-disc pl-5 space-y-2 text-slate-900 font-medium">
+                                        <li>Lab notebooks with observations and data</li>
+                                        <li>Diagrams with labels and annotations</li>
+                                        <li>Hypothesis testing and evidence recording</li>
+                                    </ul>
+                                </div>
+
+                                <div className="bg-blue-50 p-6 rounded-xl border border-blue-100">
+                                    <h3 className="text-xl font-bold mb-4 text-blue-900">What students TELL:</h3>
+                                    <ul className="list-disc pl-5 space-y-2 text-blue-900 font-medium">
+                                        <li>"I predicted... but found... which means..."</li>
+                                        <li>"The evidence that supports my conclusion is..."</li>
+                                        <li>"If I did this experiment again, I would change..."</li>
+                                    </ul>
+                                </div>
+
+                                <div className="prompt-box md:col-span-2 bg-yellow-50 p-6 rounded-xl border-l-4 border-yellow-400">
+                                    <h4 className="font-bold text-yellow-900 mb-2 uppercase tracking-wide text-sm">Sample prompt</h4>
+                                    <p className="text-lg text-slate-900 italic font-medium">"After the experiment, record your observations. In your voice explanation, connect what you observed to the scientific concept we studied."</p>
+                                </div>
+                            </div>
+                        </section>
+
+                        {/* Social Studies Section */}
+                        <section className="subject-section">
+                            <div className="flex items-center gap-3 mb-6">
+                                <span className="text-4xl" role="img" aria-label="globe">🌍</span>
+                                <h2 className="text-3xl font-bold m-0">Social Studies</h2>
+                            </div>
+                            <div className="subject-content grid md:grid-cols-2 gap-8">
+                                <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                                    <h3 className="text-xl font-bold mb-4 text-slate-900">What students DO:</h3>
+                                    <ul className="list-disc pl-5 space-y-2 text-slate-900 font-medium">
+                                        <li>Primary source analysis with evidence marks</li>
+                                        <li>Timeline annotations and cause-effect maps</li>
+                                        <li>Comparison charts across time periods or cultures</li>
+                                    </ul>
+                                </div>
+
+                                <div className="bg-blue-50 p-6 rounded-xl border border-blue-100">
+                                    <h3 className="text-xl font-bold mb-4 text-blue-900">What students TELL:</h3>
+                                    <ul className="list-disc pl-5 space-y-2 text-blue-900 font-medium">
+                                        <li>"The most significant cause of... was..."</li>
+                                        <li>"This primary source reveals... because..."</li>
+                                        <li>"I would argue that... and my evidence is..."</li>
+                                    </ul>
+                                </div>
+
+                                <div className="prompt-box md:col-span-2 bg-yellow-50 p-6 rounded-xl border-l-4 border-yellow-400">
+                                    <h4 className="font-bold text-yellow-900 mb-2 uppercase tracking-wide text-sm">Sample prompt</h4>
+                                    <p className="text-lg text-slate-900 italic font-medium">"Analyze the historical document. Annotate for perspective, bias, and key claims. In your recording, explain what this source tells us and what it might be leaving out."</p>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
 
                     {/* Cross-curricular tip */}
                     <section className="tip-section">

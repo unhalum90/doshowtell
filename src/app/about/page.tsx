@@ -22,11 +22,11 @@ export default function AboutPage() {
             <div className="container">
                 <div className="main-content">
 
-                    <section className="bio-section">
-                        <div className="bio-content">
+                    <section className="bio-section mb-12">
+                        <div className="bio-content space-y-6">
                             <h2>Meet Eric Chamberlin</h2>
                             <p>
-                                Eric Chamberlin is an educator and technologist who has spent two decades at the intersection of pedagogy and innovation. After years of watching teachers struggle to get authentic insights into student understanding, he became convinced there had to be a better way.
+                                <a href="https://www.sayveritas.com/about" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline decoration-2 underline-offset-2">Eric Chamberlin</a> is an educator and technologist who has spent two decades at the intersection of pedagogy and innovation. After years of watching teachers struggle to get authentic insights into student understanding, he became convinced there had to be a better way.
                             </p>
                             <p>
                                 The "aha moment" came from a simple observation: show and tell worked. In early elementary, we could see exactly who understood and who was confused—just by listening to kids explain their thinking. Then somewhere around 3rd grade, we abandoned oral assessment because it didn't scale.
@@ -37,7 +37,7 @@ export default function AboutPage() {
                         </div>
                     </section>
 
-                    <section className="mission-section">
+                    <section className="mission-section mb-12 space-y-6">
                         <h2>The Mission</h2>
                         <p>
                             DO Show and Tell exists to bring authentic formative assessment to grades 3-8 classrooms. We believe that:
@@ -50,7 +50,7 @@ export default function AboutPage() {
                         </ul>
                     </section>
 
-                    <section className="relationship-section">
+                    <section className="relationship-section mb-12 space-y-6">
                         <h2>The Relationship with SayVeritas</h2>
                         <p>
                             DO Show and Tell is a free, open methodology. You can implement it tomorrow with nothing but a smartphone camera and a voice memo app.
@@ -70,7 +70,7 @@ export default function AboutPage() {
                         </p>
                     </section>
 
-                    <section className="values-section">
+                    <section className="values-section mb-12 space-y-8">
                         <h2>Our Values</h2>
                         <div className="values-grid">
                             <div className="value-item">

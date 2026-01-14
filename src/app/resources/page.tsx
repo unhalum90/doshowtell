@@ -1,6 +1,7 @@
 
 import type { Metadata } from "next";
 import Link from "next/link";
+import NewsletterForm from "@/components/NewsletterForm";
 
 export const metadata: Metadata = {
     title: "Free Resources",
@@ -107,20 +108,27 @@ export default function ResourcesPage() {
                     </div>
 
                     {resources.map((category) => (
-                        <section key={category.category} className="resource-section">
-                            <h2>{category.category}</h2>
-                            <div className="resources-grid">
+                        <section key={category.category} className="resource-section mb-16">
+                            <h2 className="text-3xl font-bold mb-8 text-white border-b border-white/20 pb-4">{category.category}</h2>
+                            <div className="resources-grid grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                                 {category.items.map((resource) => (
-                                    <div key={resource.title} className="resource-card">
-                                        <div className="resource-meta">
-                                            <span className="resource-format">{resource.format}</span>
-                                            <span className="resource-audience">{resource.audience}</span>
+                                    <div key={resource.title} className="resource-card bg-white rounded-xl p-6 shadow-sm border border-slate-200 flex flex-col h-full hover:shadow-md transition-shadow">
+                                        <div className="resource-meta flex gap-2 mb-4">
+                                            <span className="resource-format inline-block bg-slate-200 text-slate-800 text-xs font-bold px-2 py-1 rounded-md uppercase tracking-wider">{resource.format}</span>
+                                            <span className="resource-audience inline-block bg-blue-100 text-blue-900 text-xs font-bold px-2 py-1 rounded-md">{resource.audience}</span>
                                         </div>
-                                        <h3>{resource.title}</h3>
-                                        <p>{resource.description}</p>
-                                        <button className="btn btn-secondary btn-sm" disabled>
-                                            Coming Soon
-                                        </button>
+                                        <h3 className="text-xl font-bold !text-slate-900 mb-3">{resource.title}</h3>
+                                        <p className="!text-slate-900 font-medium mb-6 flex-grow">{resource.description}</p>
+
+                                        {resource.title === "Student Handout: How to DO Show and Tell" ? (
+                                            <a href="/resources/How-to-DO-Show-and-Tell-Handout.html" target="_blank" className="btn btn-primary w-full text-center">
+                                                Download
+                                            </a>
+                                        ) : (
+                                            <button className="btn btn-secondary btn-sm w-full opacity-70 cursor-not-allowed bg-slate-200 text-slate-500 border-none pointer-events-none font-medium" disabled>
+                                                Coming Soon
+                                            </button>
+                                        )}
                                     </div>
                                 ))}
                             </div>
@@ -132,17 +140,7 @@ export default function ResourcesPage() {
                         <p>
                             We're finalizing our resource library. Subscribe to be the first to know when new materials are available.
                         </p>
-                        <form className="newsletter-form">
-                            <input
-                                type="email"
-                                placeholder="your@email.com"
-                                className="newsletter-input"
-                                required
-                            />
-                            <button type="submit" className="btn btn-primary">
-                                Notify Me
-                            </button>
-                        </form>
+                        <NewsletterForm />
                     </section>
 
                     <section className="cta-section">
